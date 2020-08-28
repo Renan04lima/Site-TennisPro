@@ -33,7 +33,13 @@ function LandingPage() {
                     <p>Participe de rankings e veja os resultados das rodadas</p>
                     <div class="container-btn-store-apps">
                         <img class="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
-                        <img class="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
+                        <a
+                            href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img class="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
+                        </a>
                     </div>
 
                     <img src={TennisPlayerImg} alt="tela de apresentação do app" />
@@ -90,6 +96,7 @@ function LandingPage() {
                         <strong>Endereço: </strong>
                         Av doutor armando panunzio, numero 1893. AP.403 B-13
                     </p>
+                    <p>Todos os direitos reservados</p>
                 </footer>
             </main>
         </>
