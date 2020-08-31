@@ -20,7 +20,7 @@ const BouncyDiv = styled.div`
   animation: 1s ${bounceAnimation};
 `; */
 
-function LandingPage() {
+function Landing() {
     function sendEmail(e) {
         e.preventDefault();
 
@@ -40,7 +40,7 @@ function LandingPage() {
 
                 <section>
 
-                    <h1>O app feito para todos os tenistas</h1>
+                    <h1>O <span>app</span> feito para <span>todos</span> os <span>tenistas</span></h1>
 
                     <p>Participe de rankings e veja os resultados das rodadas</p>
                     <div className="container-btn-store-apps">
@@ -125,4 +125,4 @@ function LandingPage() {
     );
 }
 
-export default LandingPage;
+export default Landing;

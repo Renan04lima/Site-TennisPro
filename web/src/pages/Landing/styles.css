@@ -1,11 +1,11 @@
-header, footer {
-    align-items: center;
-    justify-content: center;
+header {
     display: flex;
     flex-direction: column;
 }
 
-
+span {
+    color: #DF8168;
+}
 
 main .whatsapp {
     position: fixed;
@@ -15,14 +15,17 @@ main .whatsapp {
     z-index: 10000000;
 }
 
-main section div .container-btn-store-apps {}
+main section div .container-btn-store-apps {
+    display: flex;
+    justify-content: space-around;
+}
 
 main section div .btn-store-apps {
     height: 50px;
     width: 130px
 }
 
-main section nav{
+main section nav {
     align-items: center;
     justify-items: center;
     justify-content: center;
