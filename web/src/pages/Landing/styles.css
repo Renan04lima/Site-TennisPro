@@ -1,13 +1,18 @@
-header {
+header{
     display: flex;
-    flex-direction: column;
+    justify-content:center;
+}
+
+header .logo{
+    height: 50px;
+    width: 125px;
 }
 
 span {
-    color: #DF8168;
+    color: #f74b33;
 }
 
-main .whatsapp {
+ .whatsapp {
     position: fixed;
     top: 82%;
     right: 1%;
@@ -15,17 +20,17 @@ main .whatsapp {
     z-index: 10000000;
 }
 
-main section div .container-btn-store-apps {
+ section  .container-btn-store-apps {
     display: flex;
     justify-content: space-around;
 }
 
-main section div .btn-store-apps {
+ section div .btn-store-apps {
     height: 50px;
     width: 130px
 }
 
-main section nav {
+ section nav {
     align-items: center;
     justify-items: center;
     justify-content: center;
@@ -33,7 +38,7 @@ main section nav {
     flex-direction: column;
 }
 
-main section nav div .btn-categories {
+ section nav div .btn-categories {
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
@@ -49,7 +54,7 @@ main section nav div .btn-categories {
     cursor: pointer;
 }
 
-main section nav .text-categories {
+ section nav .text-categories {
     text-decoration: none;
     color: black;
     font-size: 18px;
