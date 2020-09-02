@@ -1,10 +1,19 @@
 import React from 'react';
 
+import FormField from '../../components/FormField'
+import Button from '../../components/Button'
+
 import Logo from '../../assets/logo.png'
 import Home from '../../assets/home.png'
 import Celular from '../../assets/cll.png'
 import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
+
+import Ball from '../../assets/icons/ball.svg'
+import BallWhite from '../../assets/icons/tenista.svg'
+import Book from '../../assets/icons/import_contacts-white-18dp.svg'
+import Business from '../../assets/icons/business-white-18dp.svg'
+import BusinessWhite from '../../assets/icons/predios.svg'
 
 import emailjs from 'emailjs-com';
 
@@ -55,36 +64,66 @@ function Landing() {
                 </div>
 
                 <img className="img-home" src={Home} alt="tela de apresentação do app" />
-                <p><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></p>
                 <nav className="container-categories">
+                    <h2><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></h2>
                     <div >
-                        <a className="btn-categories" href="#tennis-player"> </a>
+                        <a className="btn-categories" href="#tennis-player">
+                            <img src={Ball} alt="tenista" />
+                        </a>
+                        <a className="text-categories" href="#tennis-player">Tenistas</a>
                     </div>
-                    <a className="text-categories" href="#tennis-player">Tenistas</a>
                     <div>
-                        <a className="btn-categories" href="#teacher"></a>
+                        <a className="btn-categories" href="#teacher">
+                            <img src={Book} alt="professor" />
+                        </a>
+                        <a className="text-categories" href="#teacher">Professores</a>
                     </div>
-                    <a className="text-categories" href="#teacher">Professores</a>
                     <div>
-                        <a className="btn-categories" href="#club"></a>
+                        <a className="btn-categories" href="#club">
+                            <img src={Business} alt="Club" />
+                        </a>
                     </div>
                     <a className="text-categories" href="#club">Clubes</a>
                 </nav>
 
                 <div id="tennis-player">
-                    <h2>Tenistas</h2>
-                    <p>Visualização das estastíticas e clubes pertencentes</p>
+                    <h2 className="oblique"><img src={BallWhite} alt="tenista" /> Tenistas</h2>
+
+                    <h2>Home</h2>
+
+                    <p>Visualize suas estatísticas e participe de rankings</p>
+                    {/* 
+                        Ranking(Posições) - Visualize sua posições e a dos seus adversários
+                        Ranking(Rodadas) - Ganhe rodadas para subir de colocação e visualize os resultados dos jogos
+                        Jogos - Marque partidas e encontre pessoas do seu nível
+                        Chat - Converse com seus amigos
+                        Professores - Contrate professores experientes para treina-lo 
+                    */}
                     <img className="cll" src={Celular} alt="tela do tenista" />
                 </div>
 
                 <div id="teacher">
-                    <h2>Professores</h2>
-                    <p>Visualização das estastíticas e clubes pertencentes</p>
+                    <h2 className="oblique"><img src={Book} alt="tenista" /> Professores</h2>
+
+
+                    <h2>Home</h2>
+
+                    {/* 
+                        Perfil - Atualize seus dados e veja suas informações
+                    */}
+
+                    <p>Visualize suas negociações</p>
                     <img className="cll" src={Celular} alt="tela do professor" />
                 </div>
 
                 <div id="club">
-                    <h2>Clubes</h2>
+                    <h2 className="oblique"><img src={BusinessWhite} alt="tenista" /> Clubes</h2>
+
+                    <h2>Home</h2>
+                    {/* 
+                        Campeonatos - Crie novos campeonatos e visualize suas informações
+                    */}
+
                     <p>Visualização das estastíticas e clubes pertencentes</p>
                     <img className="cll" src={Celular} alt="tela do clube" />
                 </div>
@@ -120,17 +159,26 @@ function Landing() {
                 </div>
                 <br />
                 <form className="contact-form" onSubmit={sendEmail}>
-                    <p>Ainda ficou alguma <span>dúvida?</span></p>
-                    <label>Nome</label>
-                    <input type="text" name="name" required="required" />
-                    <br />
-                    <label>Email</label>
-                    <input type="email" name="email" required="required" />
-                    <br />
-                    <label>Assunto</label>
-                    <textarea name="assunto" required="required" />
-                    <br />
-                    <button type="submit">Enviar</button>
+                    <h2>Ainda ficou alguma <span>dúvida?</span></h2>
+                    <FormField
+                        type="text"
+                        name="name"
+                        label="Nome"
+                        required="required"
+                    />
+                    <FormField
+                        type="text"
+                        name="email"
+                        label="E-mail"
+                        required="required"
+                    />
+                    <FormField
+                        type="textarea"
+                        name="assunto"
+                        label="Assunto"
+                        required="required"
+                    />
+                    <Button type="submit">Enviar</Button>
                 </form>
                 <div>
                     <a

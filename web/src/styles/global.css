@@ -38,6 +38,12 @@ textarea {
   color: var(--color-text-base)
 }
 
+a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 span {
   color: var(--color-orange-light)
 }

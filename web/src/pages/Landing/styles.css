@@ -1,18 +1,4 @@
-header{
-    display: flex;
-    justify-content:center;
-}
-
-header .logo{
-    max-width: 100%;
-    height: auto;
-}
-
-section p .oblique {
-    font-style: oblique
-}
-
- .whatsapp {
+.whatsapp {
     position: fixed;
     top: 82%;
     right: 1%;
@@ -29,17 +15,58 @@ section p .oblique {
     max-width: 50%;
 }
 
- section  .container-btn-store-apps {
+header {
+    display: flex;
+    justify-content: center;
+}
+
+header .logo {
+    max-width: 100%;
+    height: auto;
+}
+
+#tennis-player {
+  background-color: var(--color-orange-light);
+  background-image: linear-gradient(-10deg, #ffffff 19%, transparent 20%), linear-gradient(170deg, #ffffff 19%, transparent 20%);
+}
+
+#club {
+  background-color: var(--color-text-base);
+  background-image: linear-gradient(-10deg, #ffffff 19%, transparent 20%), linear-gradient(190deg, #ffffff 19%, transparent 20%);
+}
+
+.contact-form{
+    max-width: 500px;
+    padding: 5px;
+}
+
+section div .oblique {
+    font-style: oblique
+}
+
+section h2 .oblique {
+    font-style: oblique
+}
+
+section nav {
+}
+
+section nav div {
+    flex-direction: column;
+    background-color: aqua;
+}
+
+section .container-btn-store-apps {
     display: flex;
     justify-content: space-around;
 }
 
- section div .btn-store-apps {
+section div .btn-store-apps {
     max-width: 90%;
     height: auto;
 }
 
- section nav {
+section nav {
     align-items: center;
     justify-items: center;
     justify-content: center;
@@ -47,7 +74,7 @@ section p .oblique {
     flex-direction: column;
 }
 
- section nav div .btn-categories {
+section nav div .btn-categories {
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
@@ -56,14 +83,17 @@ section p .oblique {
     width: 10px;
     padding: 20px;
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 14px 0px #DF8168;
-    -webkit-box-shadow: 0px 0px 14px 0px #DF8168;
-    -moz-box-shadow: 0px 0px 14px 0px #DF8168;
+    box-shadow: 0px 0px 14px 0px #ff9b02;
+    -webkit-box-shadow: 0px 0px 14px 0px #ff9b02;
+    -moz-box-shadow: 0px 0px 14px 0px #ff9b02;
     display: inline-block;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
- section nav .text-categories {
+section nav .text-categories {
     text-decoration: none;
     color: black;
     font-size: 18px;
