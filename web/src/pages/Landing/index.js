@@ -1,11 +1,10 @@
 import React from 'react';
 
 import Logo from '../../assets/logo.png'
-import TennisPlayerImg from '../../assets/teste.png'
-import TeacherImg from '../../assets/teste.png'
-import ClubImg from '../../assets/teste.png'
-import AppleStore from '../../assets/appleStore.png'
-import GooglePlay from '../../assets/googleplay.png'
+import Home from '../../assets/home.png'
+import Celular from '../../assets/cll.png'
+import AppleStore from '../../assets/apple.png'
+import GooglePlay from '../../assets/playstore.png'
 
 import emailjs from 'emailjs-com';
 
@@ -42,7 +41,10 @@ function Landing() {
 
                 <p>Participe de rankings e veja os resultados das rodadas</p>
                 <div className="container-btn-store-apps">
-                    <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
+                    <a
+                    >
+                        <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
+                    </a>
                     <a
                         href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
                         target="_blank"
@@ -52,8 +54,8 @@ function Landing() {
                     </a>
                 </div>
 
-                <img src={TennisPlayerImg} alt="tela de apresentação do app" />
-                <p><span>Diferentes</span> contas para diferentes <span>necessidades</span></p>
+                <img className="img-home" src={Home} alt="tela de apresentação do app" />
+                <p><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></p>
                 <nav className="container-categories">
                     <div >
                         <a className="btn-categories" href="#tennis-player"> </a>
@@ -72,26 +74,28 @@ function Landing() {
                 <div id="tennis-player">
                     <h2>Tenistas</h2>
                     <p>Visualização das estastíticas e clubes pertencentes</p>
-                    <img src={TennisPlayerImg} alt="tela do tenista" />
+                    <img className="cll" src={Celular} alt="tela do tenista" />
                 </div>
 
                 <div id="teacher">
                     <h2>Professores</h2>
                     <p>Visualização das estastíticas e clubes pertencentes</p>
-                    <img src={TeacherImg} alt="tela do professor" />
+                    <img className="cll" src={Celular} alt="tela do professor" />
                 </div>
 
                 <div id="club">
                     <h2>Clubes</h2>
                     <p>Visualização das estastíticas e clubes pertencentes</p>
-                    <img src={ClubImg} alt="tela do clube" />
+                    <img className="cll" src={Celular} alt="tela do clube" />
                 </div>
-                <br/>
+                <br />
                 <div>
-                    <p>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</p>
+                    <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
                     <div className="container-btn-store-apps">
-                        <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
                         <a
+                        >
+                            <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
+                        </a>                        <a
                             href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -100,7 +104,7 @@ function Landing() {
                         </a>
                     </div>
                 </div>
-                <br/>
+                <br />
 
                 <div className="container-comentarios">
                     <div className="perfil">
@@ -114,7 +118,7 @@ function Landing() {
                         </p>
                     </div>
                 </div>
-                <br/>
+                <br />
                 <form className="contact-form" onSubmit={sendEmail}>
                     <p>Ainda ficou alguma <span>dúvida?</span></p>
                     <label>Nome</label>

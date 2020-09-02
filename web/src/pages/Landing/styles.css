@@ -4,12 +4,12 @@ header{
 }
 
 header .logo{
-    height: 50px;
-    width: 125px;
+    max-width: 100%;
+    height: auto;
 }
 
-span {
-    color: #f74b33;
+section p .oblique {
+    font-style: oblique
 }
 
  .whatsapp {
@@ -20,14 +20,23 @@ span {
     z-index: 10000000;
 }
 
+.img-home {
+    max-width: 50%;
+
+}
+
+.cll {
+    max-width: 50%;
+}
+
  section  .container-btn-store-apps {
     display: flex;
     justify-content: space-around;
 }
 
  section div .btn-store-apps {
-    height: 50px;
-    width: 130px
+    max-width: 90%;
+    height: auto;
 }
 
  section nav {
