@@ -80,49 +80,57 @@ function Landing() {
                 <section>
 
                     <div id="welcome-container">
-                        <h1 className="main-text">O <span>app</span> feito para <span>todos</span> os <span>tenistas</span></h1>
+                        <div className="a-container">
+                            <div className="text-conteiner">
+                                <h1 className="main-text">O <span>app</span> feito para <span>todos</span> os <span>tenistas</span></h1>
 
-                        <p className="sub-text">Participe de rankings e veja os resultados das rodadas</p>
-                        <div className="store-container-a">
-                            <a
-                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
-                            </a>
-                            <a
-                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
-                            </a>
+                                <p className="sub-text">Participe de rankings e veja os resultados das rodadas</p>
+                            </div>
+                            <div className="store-container-a">
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
+                                </a>
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
+                                </a>
+                            </div>
                         </div>
 
-                        <img className="img-home" src={Home} alt="tela de apresentação do app" />
+                        <div className="b-container">
+                            <img className="img-home" src={Home} alt="tela de apresentação do app" />
+                        </div>
                     </div>
 
                     <nav className="container-categories">
-                        <h2><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></h2>
-                        <div >
+                        <h2 className="text-main"><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></h2>
+
+                        <div className="btn-a">
                             <a className="btn-categories" href="#tennis-player">
                                 <img src={Ball} alt="tenista" />
                             </a>
                             <a className="text-categories" href="#tennis-player">Tenistas</a>
                         </div>
-                        <div>
+                        <div className="btn-b">
                             <a className="btn-categories" href="#teacher">
                                 <img src={Book} alt="professor" />
                             </a>
                             <a className="text-categories" href="#teacher">Professores</a>
                         </div>
-                        <div>
+                        <div className="btn-c">
                             <a className="btn-categories" href="#club">
                                 <img src={Business} alt="Club" />
                             </a>
+                            <a className="text-categories" href="#club">Clubes</a>
                         </div>
-                        <a className="text-categories" href="#club">Clubes</a>
+
                     </nav>
 
                     <div id="tennis-player">
@@ -142,7 +150,7 @@ function Landing() {
                     </div>
 
                     <div id="teacher">
-                        <h2 className="oblique"><img src={Book} alt="tenista" /> Professores</h2>
+                        <h2 className="oblique"><img src={Book} alt="professor" /> Professores</h2>
 
 
                         <h2>Home</h2>

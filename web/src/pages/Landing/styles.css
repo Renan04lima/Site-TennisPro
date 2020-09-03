@@ -17,7 +17,7 @@ header {
 }
 
 header .logo {
-    max-width: 50%;
+    max-width: 40%;
     height: auto;
 }
 
@@ -29,17 +29,51 @@ section #welcome-container {
     align-items: center;
 }
 
-section #welcome-container .main-text {
+section #welcome-container .a-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%
+}
+
+section #welcome-container .a-container .text-conteiner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 100%
+}
+
+section #welcome-container .a-container .text-conteiner .main-text {
     padding: 20px;
+    font-size: 4rem
 }
 
-section #welcome-container .sub-text {
-    padding: 30px;
-    padding-bottom: 10px;
+section #welcome-container .a-container .text-conteiner .sub-text {
+    padding: 20px;
+    font-size: 3rem
 }
 
-section #welcome-container .img-home {
-    max-width: 500px;
+section #welcome-container .a-container .store-container-a {
+    display: flex;
+    justify-content: space-around;
+}
+
+section #welcome-container .a-container .store-container-a .btn-store-apps {
+    max-width: 90%;
+    height: auto;
+    transition: opacity .3s;
+}
+
+section #welcome-container .a-container .store-container-a .btn-store-apps:hover:focus {
+    opacity: .5;
+}
+
+section #welcome-container .b-container {
+    display: flex;
+}
+
+section #welcome-container .b-container .img-home {
+    max-width: 90%;
 }
 
 section div .oblique {
@@ -50,22 +84,7 @@ section h2 .oblique {
     font-style: oblique
 }
 
-section #welcome-container .store-container-a {
-    display: flex;
-    justify-content: space-around;
-}
-
-section div .btn-store-apps {
-    max-width: 90%;
-    height: auto;
-    transition: opacity .3s;
-}
-
-section div .btn-store-apps:hover:focus {
-    opacity: .5;
-}
-
-section nav {
+section .container-categories {
     align-items: center;
     justify-items: center;
     justify-content: center;
@@ -73,18 +92,46 @@ section nav {
     flex-direction: column;
 }
 
-section nav div {
+/* section .container-categories .btn-container {} */
+
+section .container-categories .btn-a {
+    height: 120px;
+    
+    display: flex;
     flex-direction: column;
-    background-color: aqua;
+    justify-content: space-around;
+    align-items: center;
+    
 }
 
-section nav div .btn-categories {
+section .container-categories .btn-b {
+    height: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+section .container-categories .btn-c {
+    height: 120px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+section .container-categories div .btn-categories {
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    height: 10px;
+    height: 70px;
     color: #FFFFFF;
-    width: 10px;
+    width: 70px;
     padding: 20px;
     background-color: #FFFFFF;
     box-shadow: 0px 0px 14px 0px #ff9b02;
@@ -97,10 +144,10 @@ section nav div .btn-categories {
     justify-content: center;
 }
 
-section nav .text-categories {
+section .container-categories .text-categories {
     text-decoration: none;
-    color: black;
-    font-size: 18px;
+    color: var(--color-text-base);
+    font-size: 2rem;
 }
 
 #tennis-player {
@@ -204,27 +251,40 @@ section .contact-form .text-form {
     #welcome-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 1px 1px;
         grid-template-areas:
-            "main img"
-            "subt img"
-            "btn img";
+            "a b"
+            "a b";
     }
 
-    .main-text {
+    .a-container {
+        grid-area: a;
+        height: 400px;
+        justify-content: space-between;
+    }
+
+    .b-container {
+        grid-area: b;
+    }
+
+    section .container-categories {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 1px 1px;
+        grid-template-areas:
+          "main main main"
+          "btn-a btn-b btn-c";
+    }
+
+    .text-main{
         grid-area: main;
     }
 
-    .sub-text {
-        grid-area: subt;
-    }
-
-    .store-container-a {
-        grid-area: btn;
-    }
-
-    .img-home {
-        grid-area: img;
-    }
+    .btn-a { grid-area: btn-a; }
+    
+    .btn-b { grid-area: btn-b; }
+    
+    .btn-c { grid-area: btn-c; }
 }
