@@ -18,10 +18,11 @@
 header {
     display: flex;
     justify-content: center;
+    background-attachment: fixed;
 }
 
 header .logo {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
 }
 
@@ -64,8 +65,11 @@ section .container-btn-store-apps {
 section div .btn-store-apps {
     max-width: 90%;
     height: auto;
+    transition: opacity .3s;
 }
-
+section div .btn-store-apps:hover:focus {
+    opacity: .5;
+}
 section nav {
     align-items: center;
     justify-items: center;

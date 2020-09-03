@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import FormField from '../../components/FormField'
 import Button from '../../components/Button'
+import useForm from '../../hooks/useForm'
 
 import Logo from '../../assets/logo.png'
 import Home from '../../assets/home.png'
@@ -29,15 +30,42 @@ const BouncyDiv = styled.div`
 `; */
 
 function Landing() {
+    const valoresIniciais = {
+        name: '',
+        email: '',
+        assunto: '',
+    };
+
+    const { handleChange, values, clearForm } = useForm(valoresIniciais);
+
+
+    /* useEffect(() => {
+        const URL = window.location.href.includes('localhost')
+            ? 'http://localhost:8080/categorias'
+            : 'https://binarioflix.herokuapp.com/categorias';
+        fetch(URL)
+            .then(async (respostaDoServer) => {
+                if (respostaDoServer.ok) {
+                    const resposta = await respostaDoServer.json();
+                    setCategorias(resposta);
+                    return;
+                }
+                throw new Error('Não foi possível pegar os dados');
+            });
+    }, []); */
+
     function sendEmail(e) {
         e.preventDefault();
 
         emailjs.sendForm('gmail', 'tennisprocontato', e.target, 'user_HMNJzhe5Zd0Ce1xfREMPx')
             .then((result) => {
+                alert('Dúvida enviada com sucesso! Por favor, aguarde a resposta no e-mail informado.')
                 console.log(result.text);
             }, (error) => {
+                alert('Ocorreu algum problema, verifique sua conexão com a internet.')
                 console.log(error.text);
             });
+            clearForm();
     }
     return (
         <>
@@ -51,6 +79,9 @@ function Landing() {
                 <p>Participe de rankings e veja os resultados das rodadas</p>
                 <div className="container-btn-store-apps">
                     <a
+                        href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
                     </a>
@@ -132,6 +163,9 @@ function Landing() {
                     <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
                     <div className="container-btn-store-apps">
                         <a
+                            href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
                         </a>                        <a
@@ -158,25 +192,34 @@ function Landing() {
                     </div>
                 </div>
                 <br />
-                <form className="contact-form" onSubmit={sendEmail}>
+                <form
+                    className="contact-form"
+                    onSubmit={sendEmail}
+                >
                     <h2>Ainda ficou alguma <span>dúvida?</span></h2>
                     <FormField
                         type="text"
                         name="name"
                         label="Nome"
                         required="required"
+                        value={values.name}
+                        onChange={handleChange}
                     />
                     <FormField
                         type="text"
                         name="email"
                         label="E-mail"
                         required="required"
+                        value={values.email}
+                        onChange={handleChange}
                     />
                     <FormField
                         type="textarea"
                         name="assunto"
                         label="Assunto"
                         required="required"
+                        value={values.assunto}
+                        onChange={handleChange}
                     />
                     <Button type="submit">Enviar</Button>
                 </form>

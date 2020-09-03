@@ -73,7 +73,7 @@ const Input = styled.input`
 `;
 
 function FormField({
-  label, type, name, value, onChange, suggestions,
+  label, type, name, value, onChange, suggestions, required
 }) {
   const fieldId = `id_${name}`;
   const isTypeTextArea = type === 'textarea';
@@ -93,6 +93,7 @@ function FormField({
           type={type}
           value={value}
           name={name}
+          required={required}
           hasValue={hasValue}
           onChange={onChange}
           autoComplete={hasSuggestion ? 'off' : 'on'}
@@ -133,6 +134,7 @@ FormField.propTypes = {
   name: PropTypes.string.isRequired,
   type: PropTypes.string,
   value: PropTypes.string,
+  required: PropTypes.string,
   onChange: PropTypes.func,
   suggestions: PropTypes.arrayOf(PropTypes.string),
 };

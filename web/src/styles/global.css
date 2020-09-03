@@ -8,11 +8,6 @@
   font-size: 60%;
 }
 
-@font-face {
-  font-family: 'Aero';
-  src: url("../assets/fonts/Aero.ttf");
-}
-
 * {
   margin: 0;
   padding: 0;
