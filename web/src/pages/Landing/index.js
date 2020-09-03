@@ -9,12 +9,16 @@ import Home from '../../assets/home.png'
 import Celular from '../../assets/cll.png'
 import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
+import Perfil from '../../assets/perfil.png'
 
 import Ball from '../../assets/icons/ball.svg'
 import BallWhite from '../../assets/icons/tenista.svg'
 import Book from '../../assets/icons/import_contacts-white-18dp.svg'
 import Business from '../../assets/icons/business-white-18dp.svg'
 import BusinessWhite from '../../assets/icons/predios.svg'
+import ArrowRight from '../../assets/icons/keyboard_arrow_right-24px.svg'
+import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
+import ArrowRightOrange from '../../assets/icons/arrow_right-orange.svg'
 
 import emailjs from 'emailjs-com';
 
@@ -65,7 +69,7 @@ function Landing() {
                 alert('Ocorreu algum problema, verifique sua conexão com a internet.')
                 console.log(error.text);
             });
-            clearForm();
+        clearForm();
     }
     return (
         <>
@@ -181,14 +185,25 @@ function Landing() {
 
                 <div className="container-comentarios">
                     <div className="perfil">
+                        <img src={Perfil} alt="imagem do perfil" />
                         Christopher Brendo
                     </div>
                     <div className="comentario">
-                        <p>comentario comentario comentario comentario comentario comentario comentario
-                        comentario comentario comentario comentario comentario comentario comentario
-                        comentario comentario comentario comentario comentario comentario comentario comentario
-                        comentario comentario comentario comentario comentario comentario comentario comentario
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..
                         </p>
+                    </div>
+                    <div className="btn-comentario">
+                        <button>
+                            <img src={ArrowLeft} alt="comentário anterior" />
+                        </button>
+
+                        <button className="arrowLeft">
+                            <img src={ArrowRightOrange} alt="próximo comentário" />
+                        </button>
                     </div>
                 </div>
                 <br />
