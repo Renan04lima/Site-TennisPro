@@ -6,11 +6,6 @@
     z-index: 10000000;
 }
 
-.img-home {
-    max-width: 50%;
-
-}
-
 .cll {
     max-width: 50%;
 }
@@ -26,19 +21,25 @@ header .logo {
     height: auto;
 }
 
-#tennis-player {
-    background-color: var(--color-orange-light);
-    background-image: linear-gradient(-10deg, #ffffff 19%, transparent 20%), linear-gradient(170deg, #ffffff 19%, transparent 20%);
+section #welcome-container {
+    padding: 10px;
+
+    /* display: flex ; */
+    flex-direction: column;
+    align-items: center;
 }
 
-#club {
-    background-color: var(--color-text-base);
-    background-image: linear-gradient(-10deg, #ffffff 19%, transparent 20%), linear-gradient(190deg, #ffffff 19%, transparent 20%);
+section #welcome-container .main-text {
+    padding: 20px;
 }
 
-.contact-form {
+section #welcome-container .sub-text {
+    padding: 30px;
+    padding-bottom: 10px;
+}
+
+section #welcome-container .img-home {
     max-width: 500px;
-    padding: 5px;
 }
 
 section div .oblique {
@@ -49,8 +50,7 @@ section h2 .oblique {
     font-style: oblique
 }
 
-
-section .container-btn-store-apps {
+section #welcome-container .store-container-a {
     display: flex;
     justify-content: space-around;
 }
@@ -103,7 +103,19 @@ section nav .text-categories {
     font-size: 18px;
 }
 
-section .container-comentarios {
+#tennis-player {
+    background-color: var(--color-orange-light);
+    background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(175deg, #ffffff 19%, transparent 20%);
+}
+
+#club {
+    background-color: var(--color-text-base);
+    background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(185deg, #ffffff 19%, transparent 20%);
+}
+
+
+
+section .comments-container {
     max-width: 500px;
     padding: 30px;
 
@@ -113,9 +125,9 @@ section .container-comentarios {
     justify-content: center;
 }
 
-section .container-comentarios .perfil {
+section .comments-container .perfil {
     padding: 10px;
-    padding-bottom:20px;
+    padding-bottom: 20px;
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -123,7 +135,7 @@ section .container-comentarios .perfil {
     font-size: 2.5rem;
 }
 
-section .container-comentarios .perfil img {
+section .comments-container .perfil img {
     height: 50px;
     width: 50px;
 
@@ -131,21 +143,20 @@ section .container-comentarios .perfil img {
     margin-bottom: 10px;
 }
 
-section .container-comentarios p {
+section .comments-container p {
     font-size: 1.8rem;
     line-height: 3rem;
     text-align: center;
 }
 
-section .container-comentarios .btn-comentario {
+section .comments-container .btn-comentario {
     width: 360px;
     display: flex;
-    padding: 10px;
+    padding: 15px;
     justify-content: space-between;
-
 }
 
-section .container-comentarios .btn-comentario button {
+section .comments-container .btn-comentario button {
     border-radius: 100%;
     border: 2px solid #cccccc;
     transition: opacity .3s;
@@ -157,14 +168,63 @@ section .container-comentarios .btn-comentario button {
     -moz-box-shadow: 0px 0px 14px 0px #cccccc;
 }
 
-section .container-comentarios .btn-comentario button:hover,
-section .container-comentarios .btn-comentario button:focus {
+section .comments-container .btn-comentario button:hover,
+section .comments-container .btn-comentario button:focus {
     opacity: .5;
 }
 
-section .container-comentarios .btn-comentario .arrowLeft {
+section .comments-container .btn-comentario .arrowLeft {
     border: 2px transparent var(--color-orange-light);
     box-shadow: 0px 0px 14px 0px #ff9b02;
     -webkit-box-shadow: 0px 0px 14px 0px #ff9b02;
     -moz-box-shadow: 0px 0px 14px 0px #ff9b02;
+}
+
+section .contact-form {
+    max-width: 500px;
+    padding: 5px;
+}
+
+section .contact-form .text-form {
+    padding: 10px;
+}
+
+@media screen and (min-width: 1100px) {
+    #page-landind-content {
+
+        /* display: grid;
+        grid-template-rows: 350px 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas:
+            "logo hero hero"
+            "buttons buttons total"
+        ; */
+    }
+
+    #welcome-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "main img"
+            "subt img"
+            "btn img";
+    }
+
+    .main-text {
+        grid-area: main;
+    }
+
+    .sub-text {
+        grid-area: subt;
+    }
+
+    .store-container-a {
+        grid-area: btn;
+    }
+
+    .img-home {
+        grid-area: img;
+    }
 }
