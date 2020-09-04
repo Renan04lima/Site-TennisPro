@@ -33,6 +33,14 @@ const BouncyDiv = styled.div`
   animation: 1s ${bounceAnimation};
 `; */
 
+ /* 
+        Ranking(Posições) - Visualize sua posições e a dos seus adversários
+        Ranking(Rodadas) - Ganhe rodadas para subir de colocação e visualize os resultados dos jogos
+        Jogos - Marque partidas e encontre pessoas do seu nível
+        Chat - Converse com seus amigos
+        Professores - Contrate professores experientes para treina-lo 
+    */
+
 function Landing() {
     const valoresIniciais = {
         name: '',
@@ -43,20 +51,7 @@ function Landing() {
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
 
-    /* useEffect(() => {
-        const URL = window.location.href.includes('localhost')
-            ? 'http://localhost:8080/categorias'
-            : 'https://binarioflix.herokuapp.com/categorias';
-        fetch(URL)
-            .then(async (respostaDoServer) => {
-                if (respostaDoServer.ok) {
-                    const resposta = await respostaDoServer.json();
-                    setCategorias(resposta);
-                    return;
-                }
-                throw new Error('Não foi possível pegar os dados');
-            });
-    }, []); */
+   
 
     function sendEmail(e) {
         e.preventDefault();
@@ -118,35 +113,40 @@ function Landing() {
                             </a>
                             <a className="text-categories" href="#tennis-player">Tenistas</a>
                         </div>
+
                         <div className="btn-b">
                             <a className="btn-categories" href="#teacher">
                                 <img src={Book} alt="professor" />
                             </a>
                             <a className="text-categories" href="#teacher">Professores</a>
                         </div>
+
                         <div className="btn-c">
                             <a className="btn-categories" href="#club">
                                 <img src={Business} alt="Club" />
                             </a>
                             <a className="text-categories" href="#club">Clubes</a>
                         </div>
-
                     </nav>
 
                     <div id="tennis-player">
-                        <h2 className="oblique"><img src={BallWhite} alt="tenista" /> Tenistas</h2>
+                        <div className="tennis-container-a">
 
-                        <h2>Home</h2>
+                            <h2 className="oblique"><img src={BallWhite} alt="tenista" /> Tenistas</h2>
 
-                        <p>Visualize suas estatísticas e participe de rankings</p>
-                        {/* 
-                        Ranking(Posições) - Visualize sua posições e a dos seus adversários
-                        Ranking(Rodadas) - Ganhe rodadas para subir de colocação e visualize os resultados dos jogos
-                        Jogos - Marque partidas e encontre pessoas do seu nível
-                        Chat - Converse com seus amigos
-                        Professores - Contrate professores experientes para treina-lo 
-                    */}
-                        <img className="cll" src={Celular} alt="tela do tenista" />
+                            <h2>Home</h2>
+
+                            <p>Visualize suas estatísticas e participe de rankings</p>
+                        </div>
+                        <div className="btn-tennis">
+                            <button className="btn">
+                                <img src={ArrowRight} alt="comentário anterior" />
+                            </button>
+                        </div>
+                        <div className="cll-tennis">
+                            <img className="img-tennis" src={Celular} alt="tela do tenista" />
+                        </div>
+                        
                     </div>
 
                     <div id="teacher">

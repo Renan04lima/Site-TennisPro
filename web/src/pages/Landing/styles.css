@@ -96,32 +96,32 @@ section .container-categories {
 
 section .container-categories .btn-a {
     height: 120px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
 section .container-categories .btn-b {
     height: 120px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
 section .container-categories .btn-c {
     height: 120px;
-    
+
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+
 }
 
 
@@ -153,6 +153,32 @@ section .container-categories .text-categories {
 #tennis-player {
     background-color: var(--color-orange-light);
     background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(175deg, #ffffff 19%, transparent 20%);
+}
+
+#tennis-player .cll-tennis {
+    max-width: 250px;
+    margin: auto;
+}
+
+#tennis-player .cll-tennis .img-tennis {
+    max-width: 250px;
+    
+}
+
+#tennis-player .btn-tennis .btn {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    height: 70px;
+    color: #FFFFFF;
+    width: 70px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    display: inline-block;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #club {
@@ -274,17 +300,44 @@ section .contact-form .text-form {
         grid-template-rows: 1fr 1fr;
         gap: 1px 1px;
         grid-template-areas:
-          "main main main"
-          "btn-a btn-b btn-c";
+            "main main main"
+            "btn-a btn-b btn-c";
     }
 
-    .text-main{
+    .text-main {
         grid-area: main;
     }
 
-    .btn-a { grid-area: btn-a; }
-    
-    .btn-b { grid-area: btn-b; }
-    
-    .btn-c { grid-area: btn-c; }
+    .btn-a {
+        grid-area: btn-a;
+    }
+
+    .btn-b {
+        grid-area: btn-b;
+    }
+
+    .btn-c {
+        grid-area: btn-c;
+    }
+
+    #tennis-player {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "cll-tennis ."
+            "cll-tennis tennis-a"
+            "cll-tennis .";
+    }
+
+    .cll-tennis {
+        grid-area: cll-tennis;
+        max-width: 300px;
+        margin: 50px auto 30px;
+    }
+
+    .tennis-container-a {
+        grid-area: tennis-a;
+    }
 }
