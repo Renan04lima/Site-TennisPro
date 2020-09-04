@@ -6,9 +6,10 @@ import useForm from '../../hooks/useForm'
 
 import Logo from '../../assets/logo.png'
 import Home from '../../assets/home.png'
-import Celular from '../../assets/cll.png'
 import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
+import Celular from '../../assets/cll.png'
+import TennisImg1 from '../../assets/tenista/home.png'
 import Perfil from '../../assets/perfil.png'
 
 import Ball from '../../assets/icons/ball.svg'
@@ -23,6 +24,9 @@ import ArrowRightOrange from '../../assets/icons/arrow_right-orange.svg'
 import emailjs from 'emailjs-com';
 
 import './styles.css'
+import './welcome.css'
+import './categories.css'
+import './comments.css'
 
 // import styled, { keyframes } from 'styled-components';
 /*import { fadeInLeft } from 'react-animations';
@@ -33,13 +37,13 @@ const BouncyDiv = styled.div`
   animation: 1s ${bounceAnimation};
 `; */
 
- /* 
-        Ranking(Posições) - Visualize sua posições e a dos seus adversários
-        Ranking(Rodadas) - Ganhe rodadas para subir de colocação e visualize os resultados dos jogos
-        Jogos - Marque partidas e encontre pessoas do seu nível
-        Chat - Converse com seus amigos
-        Professores - Contrate professores experientes para treina-lo 
-    */
+/* 
+       Ranking(Posições) - Visualize sua posições e a dos seus adversários
+       Ranking(Rodadas) - Ganhe rodadas para subir de colocação e visualize os resultados dos jogos
+       Jogos - Marque partidas e encontre pessoas do seu nível
+       Chat - Converse com seus amigos
+       Professores - Contrate professores experientes para treina-lo 
+   */
 
 function Landing() {
     const valoresIniciais = {
@@ -51,7 +55,7 @@ function Landing() {
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
 
-   
+
 
     function sendEmail(e) {
         e.preventDefault();
@@ -144,9 +148,10 @@ function Landing() {
                             </button>
                         </div>
                         <div className="cll-tennis">
-                            <img className="img-tennis" src={Celular} alt="tela do tenista" />
+                            <img className="img-tennis" src={TennisImg1} />
+                            <img className="img-cll" src={Celular} alt="tela do tenista" />
                         </div>
-                        
+
                     </div>
 
                     <div id="teacher">
