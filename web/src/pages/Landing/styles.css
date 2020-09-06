@@ -52,6 +52,9 @@ section h2 .oblique {
     position:absolute; 
 }
 
+#tennis-player .btn-tennis{
+}
+
 #tennis-player .btn-tennis .btn {
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
@@ -66,6 +69,10 @@ section h2 .oblique {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    position:absolute; 
+    transform: translateY(-50%);
+
 }
 
 #club {
@@ -83,6 +90,11 @@ section .contact-form .text-form {
 }
 
 @media screen and (min-width: 1100px) {
+
+    #page-landind-content{
+        max-width: 1554px;
+        margin: auto;
+    }
     
 
     .cll-tennis {
@@ -95,5 +107,41 @@ section .contact-form .text-form {
         position: absolute;
         top: 1400px;
         right: 130px
+    }
+
+    #tennis-player .btn-tennis{
+        max-width: 250px;
+        margin: auto;
+    }
+    
+    #tennis-player .btn-tennis .btn {
+        position:absolute;
+        top: 1600px;
+        right: 250px
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .cll-tennis {
+        position: absolute;
+        top: 1300px;
+        left: 400px
+    }
+
+    .tennis-container-a {
+        position: absolute;
+        top: 1400px;
+        right: 400px
+    }
+
+    #tennis-player .btn-tennis{
+        max-width: 250px;
+        margin: auto;
+    }
+    
+    #tennis-player .btn-tennis .btn {
+        position:absolute;
+        top: 1600px;
+        right: 500px
     }
 }

@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import FormField from '../../components/FormField'
 import Button from '../../components/Button'
 import useForm from '../../hooks/useForm'
+import Pics from '../../components/Pics'
 
 import Logo from '../../assets/logo.png'
 import Home from '../../assets/home.png'
 import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
 import Celular from '../../assets/cll.png'
-import TennisImg1 from '../../assets/tenista/home.png'
 import Perfil from '../../assets/perfil.png'
 
 import Ball from '../../assets/icons/ball.svg'
@@ -20,6 +20,14 @@ import BusinessWhite from '../../assets/icons/predios.svg'
 import ArrowRight from '../../assets/icons/keyboard_arrow_right-24px.svg'
 import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
 import ArrowRightOrange from '../../assets/icons/arrow_right-orange.svg'
+
+import { TitleArrayT, PhrasesArrayT } from '../../Utils/Arrays/tennis'
+import Tennis1 from '../../assets/tenista/home.png'
+import Tennis6 from '../../assets/tenista/ranking-posicoes.png'
+import Tennis5 from '../../assets/tenista/ranking-rodadas.png'
+import Tennis3 from '../../assets/tenista/jogos.png'
+import Tennis2 from '../../assets/tenista/chat.png'
+import Tennis4 from '../../assets/tenista/professores.png'
 
 import emailjs from 'emailjs-com';
 
@@ -37,26 +45,31 @@ const BouncyDiv = styled.div`
   animation: 1s ${bounceAnimation};
 `; */
 
-/* 
-       Ranking(Posições) - Visualize sua posições e a dos seus adversários
-       Ranking(Rodadas) - Ganhe rodadas para subir de colocação e visualize os resultados dos jogos
-       Jogos - Marque partidas e encontre pessoas do seu nível
-       Chat - Converse com seus amigos
-       Professores - Contrate professores experientes para treina-lo 
-   */
-
 function Landing() {
+    const [x, setX] = useState(0)
     const valoresIniciais = {
         name: '',
         email: '',
         assunto: '',
     };
 
+    const PicsArrayT = [
+        <Pics className="img-tennis" src={Tennis1} />,
+        <Pics className="img-tennis" src={Tennis2} />,
+        <Pics className="img-tennis" src={Tennis3} />,
+        <Pics className="img-tennis" src={Tennis4} />,
+        <Pics className="img-tennis" src={Tennis5} />,
+        <Pics className="img-tennis" src={Tennis6} />,
+    ]
+
+
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
+    console.log(x)
 
-
-
+    useEffect(() => {
+        if (x === 6) { setX(0) }
+    }, [x])
     function sendEmail(e) {
         e.preventDefault();
 
@@ -138,17 +151,17 @@ function Landing() {
 
                             <h2 className="oblique"><img src={BallWhite} alt="tenista" /> Tenistas</h2>
 
-                            <h2>Home</h2>
+                            <h2>{TitleArrayT[x]}</h2>
 
-                            <p>Visualize suas estatísticas e participe de rankings</p>
+                            <p>{PhrasesArrayT[x]}</p>
                         </div>
                         <div className="btn-tennis">
-                            <button className="btn">
+                            <button className="btn" onClick={() => { setX(x + 1) }}>
                                 <img src={ArrowRight} alt="comentário anterior" />
                             </button>
                         </div>
                         <div className="cll-tennis">
-                            <img className="img-tennis" src={TennisImg1} />
+                            {PicsArrayT[x]}
                             <img className="img-cll" src={Celular} alt="tela do tenista" />
                         </div>
 
@@ -158,13 +171,9 @@ function Landing() {
                         <h2 className="oblique"><img src={Book} alt="professor" /> Professores</h2>
 
 
-                        <h2>Home</h2>
+                        {/* <h2>{TitleArrayP[x]}</h2> */}
 
-                        {/* 
-                        Perfil - Atualize seus dados e veja suas informações
-                    */}
-
-                        <p>Visualize suas negociações</p>
+                        {/* <p>{PhrasesArrayP[x]}</p> */}
                         <img className="cll" src={Celular} alt="tela do professor" />
                     </div>
 
