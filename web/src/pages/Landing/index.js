@@ -29,6 +29,12 @@ import Tennis3 from '../../assets/tenista/ranking-rodadas.png'
 import Tennis4 from '../../assets/tenista/jogos.png'
 import Tennis5 from '../../assets/tenista/chat.png'
 import Tennis6 from '../../assets/tenista/professores.png'
+import { TitleArrayP, PhrasesArrayP } from '../../Utils/Arrays/teacher'
+import Teacher1 from '../../assets/professor/home.png'
+import Teacher2 from '../../assets/professor/perfil.png'
+import { TitleArrayC, PhrasesArrayC } from '../../Utils/Arrays/club'
+import Club1 from '../../assets/clube/home.png'
+import Club2 from '../../assets/clube/detalhes.png'
 
 import emailjs from 'emailjs-com';
 
@@ -36,18 +42,23 @@ import './styles.css'
 import './welcome.css'
 import './categories.css'
 import './comments.css'
+import './tennis.css'
+import './teacher.css'
+import './club.css'
 
 import styled, { keyframes } from 'styled-components';
 import { fadeInLeft } from 'react-animations';
 
- const bounceAnimation = keyframes`${fadeInLeft}`;
+const bounceAnimation = keyframes`${fadeInLeft}`;
 
 const BouncyDiv = styled.p`
   animation: 1s ${bounceAnimation};
 `;
 
 function Landing() {
-    const [x, setX] = useState(0)
+    const [tennisState, setTennisState] = useState(0)
+    const [teacherState, setTeacherState] = useState(0)
+    const [clubState, setClubState] = useState(0)
     const [indexComment, setIndexComment] = useState(0)
     const valoresIniciais = {
         name: '',
@@ -64,20 +75,34 @@ function Landing() {
         <Pics className="img-tennis" src={Tennis6} />,
     ]
 
+    const PicsArrayP = [
+        <Pics className="img-teacher" src={Teacher1} />,
+        <Pics className="img-teacher" src={Teacher2} />,
+    ]
+
+    const PicsArrayC = [
+        <Pics className="img-club" src={Club1} />,
+        <Pics className="img-club" src={Club2} />,
+    ]
 
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
     console.log('index comemente ', indexComment)
 
     useEffect(() => {
-        if (x === 6) { setX(0) }
+        if (tennisState === 6) { setTennisState(0) }
+        if (teacherState === 2) { setTeacherState(0) }
+        if (clubState === 2) { setClubState(0) }
         if (indexComment === 3) { setIndexComment(0) }
-        const time = setTimeout(()=> {
+        const time = setTimeout(() => {
             setIndexComment(indexComment + 1)
-            setX(x + 1)
+            setTennisState(tennisState + 1)
+            setTeacherState(teacherState + 1)
+            setClubState(clubState + 1)
         }, 5000)
         return () => clearTimeout(time);
-    }, [x, indexComment])
+    }, [tennisState, teacherState, clubState, indexComment])
+
     function sendEmail(e) {
         e.preventDefault();
 
@@ -157,44 +182,62 @@ function Landing() {
                     <div id="tennis-player">
                         <div className="tennis-container-a">
 
-                            <h2 className="oblique"><img src={BallWhite} alt="tenista" /> Tenistas</h2>
+                            <h2 className="oblique"><img src={BallWhite} alt="ícone do tenista" /> Tenistas</h2>
 
-                            <h2>{TitleArrayT[x]}</h2>
+                            <h2>{TitleArrayT[tennisState]}</h2>
 
-                            <p>{PhrasesArrayT[x]}</p>
+                            <p>{PhrasesArrayT[tennisState]}</p>
                         </div>
                         <div className="btn-tennis">
-                            <button className="btn" onClick={() => { setX(x + 1) }}>
+                            <button className="btn" onClick={() => { setTennisState(tennisState + 1) }}>
                                 <img src={ArrowRight} alt="comentário anterior" />
                             </button>
                         </div>
                         <div className="cll-tennis">
-                            {PicsArrayT[x]}
-                            <img className="img-cll" src={Celular} alt="tela do tenista" />
+                            {PicsArrayT[tennisState]}
+                            {/* <img className="img-cll" src={Celular} alt="tela do tenista" /> */}
                         </div>
 
                     </div>
 
                     <div id="teacher">
-                        <h2 className="oblique"><img src={Book} alt="professor" /> Professores</h2>
+                        <div className="teacher-container-a">
+
+                            <h2 className="oblique"><img src={Book} alt="ícone do professor" /> Professores</h2>
 
 
-                        {/* <h2>{TitleArrayP[x]}</h2> */}
+                            <h2>{TitleArrayP[teacherState]}</h2>
 
-                        {/* <p>{PhrasesArrayP[x]}</p> */}
-                        <img className="cll" src={Celular} alt="tela do professor" />
+                            <p>{PhrasesArrayP[teacherState]}</p>
+                        </div>
+                        <div className="btn-teacher">
+                            <button className="btn" onClick={() => { setTeacherState(teacherState + 1) }}>
+                                <img src={ArrowRight} alt="comentário anterior" />
+                            </button>
+                        </div>
+                        <div className="cll-teacher">
+                            {PicsArrayP[teacherState]}
+                            <img className="img-cll" src={Celular} alt="tela do professor" />
+                        </div>
                     </div>
 
                     <div id="club">
-                        <h2 className="oblique"><img src={BusinessWhite} alt="tenista" /> Clubes</h2>
+                        <div className="club-container-a">
+                            <h2 className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</h2>
 
-                        <h2>Home</h2>
-                        {/* 
-                        Campeonatos - Crie novos campeonatos e visualize suas informações
-                    */}
+                            <h2>{TitleArrayC[clubState]}</h2>
 
-                        <p>Visualização das estastíticas e clubes pertencentes</p>
-                        <img className="cll" src={Celular} alt="tela do clube" />
+                            <p>{PhrasesArrayC[clubState]}</p>
+                        </div>
+                        <div className="btn-club">
+                            <button className="btn" onClick={() => { setClubState(clubState + 1) }}>
+                                <img src={ArrowRight} alt="comentário anterior" />
+                            </button>
+                        </div>
+                        <div className="cll-club">
+                            {PicsArrayC[clubState]}
+                            <img className="img-cll" src={Celular} alt="tela do clube" />
+                        </div>
                     </div>
                     <div>
                         <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
@@ -225,7 +268,7 @@ function Landing() {
                             </BouncyDiv>
                         </div>
                         <div className="btn-comentario">
-                            <button onClick={()=> setIndexComment(indexComment - 1)}>
+                            <button onClick={() => setIndexComment(indexComment - 1)}>
                                 <img src={ArrowLeft} alt="comentário anterior" />
                             </button>
 

@@ -1,0 +1,96 @@
+#club {
+    height: 800px;
+
+    background-color: var(--color-text-base);
+    background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(185deg, #ffffff 19%, transparent 20%);
+}
+
+#club .cll-club {
+    max-width: 250px;
+    margin: auto;
+}
+
+#club .cll-club .img-club {
+    max-width: 250px;
+    position:absolute;
+    border-radius: 25px;
+}
+
+#club .cll-club .img-cll {
+    max-width: 250px;
+    position:absolute; 
+}
+
+#club .btn-club{
+}
+
+#club .btn-club .btn {
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    height: 70px;
+    color: #FFFFFF;
+    width: 70px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    display: inline-block;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position:absolute; 
+    transform: translateY(-50%);
+
+}
+
+@media screen and (min-width: 1100px) {
+
+    .cll-club {
+        position: absolute;
+        top: 2200px;
+        left: 130px
+    }
+
+    .club-container-a {
+        position: absolute;
+        top: 2200px;
+        right: 130px
+    }
+
+    #club .btn-club{
+        max-width: 250px;
+        margin: auto;
+    }
+    
+    #club .btn-club .btn {
+        position:absolute;
+        top: 2500px;
+        right: 250px
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .cll-club {
+        position: absolute;
+        top: 3200px;
+        left: 400px
+    }
+
+    .club-container-a {
+        position: absolute;
+        top: 3200px;
+        right: 400px
+    }
+
+    #club .btn-club{
+        max-width: 250px;
+        margin: auto;
+    }
+    
+    #club .btn-club .btn {
+        position:absolute;
+        top: 3600px;
+        right: 500px
+    }
+}
