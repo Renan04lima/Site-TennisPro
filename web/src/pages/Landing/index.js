@@ -11,6 +11,7 @@ import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
 import Celular from '../../assets/cll.png'
 import Perfil from '../../assets/perfil.png'
+import Gostou from '../../assets/app.png'
 
 import Ball from '../../assets/icons/ball.svg'
 import BallWhite from '../../assets/icons/tenista.svg'
@@ -18,8 +19,8 @@ import Book from '../../assets/icons/import_contacts-white-18dp.svg'
 import Business from '../../assets/icons/business-white-18dp.svg'
 import BusinessWhite from '../../assets/icons/predios.svg'
 import ArrowRight from '../../assets/icons/keyboard_arrow_right-24px.svg'
-import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
-import ArrowRightOrange from '../../assets/icons/arrow_right-orange.svg'
+import { ReactComponent as ArrowLeft } from '../../assets/icons/keyboard_arrow_left-24px.svg'
+import { ReactComponent as ArrowRightOrange } from '../../assets/icons/arrow_right-orange.svg'
 
 import { NameArray, CommentArray } from '../../Utils/Arrays/comments'
 import { TitleArrayT, PhrasesArrayT } from '../../Utils/Arrays/tennis'
@@ -180,66 +181,83 @@ function Landing() {
                     </nav>
 
                     <div id="tennis-player">
+                        <h2 className="tennisIcon"><img src={BallWhite} alt="ícone do tenista" /> Tenistas</h2>
+
                         <div className="tennis-container-a">
 
                             <h2 className="oblique"><img src={BallWhite} alt="ícone do tenista" /> Tenistas</h2>
 
-                            <h2>{TitleArrayT[tennisState]}</h2>
+                            <h2 className="title">{TitleArrayT[tennisState]}</h2>
 
-                            <p>{PhrasesArrayT[tennisState]}</p>
-                        </div>
-                        <div className="btn-tennis">
-                            <button className="btn" onClick={() => { setTennisState(tennisState + 1) }}>
-                                <img src={ArrowRight} alt="comentário anterior" />
+                            <p className="phrase">{PhrasesArrayT[tennisState]}</p>
+
+                            <button className="btn-tennis" onClick={() => { setTennisState(tennisState + 1) }}>
+                                <ArrowRightOrange />
                             </button>
                         </div>
+
                         <div className="cll-tennis">
                             {PicsArrayT[tennisState]}
-                            {/* <img className="img-cll" src={Celular} alt="tela do tenista" /> */}
+                            <button className="btn" onClick={() => { setTennisState(tennisState + 1) }}>
+                                <ArrowRightOrange />
+                            </button>
                         </div>
+
 
                     </div>
 
                     <div id="teacher">
+                        <h2 className="teacherIcon"><img src={Book} alt="ícone do Professores" /> Professores</h2>
+
                         <div className="teacher-container-a">
 
-                            <h2 className="oblique"><img src={Book} alt="ícone do professor" /> Professores</h2>
+                            <h2 className="oblique"><img src={Book} alt="ícone do Professores" /> Professores</h2>
 
+                            <h2 className="title">{TitleArrayP[teacherState]}</h2>
 
-                            <h2>{TitleArrayP[teacherState]}</h2>
+                            <p className="phrase">{PhrasesArrayP[teacherState]}</p>
 
-                            <p>{PhrasesArrayP[teacherState]}</p>
-                        </div>
-                        <div className="btn-teacher">
-                            <button className="btn" onClick={() => { setTeacherState(teacherState + 1) }}>
-                                <img src={ArrowRight} alt="comentário anterior" />
+                            <button className="btn-teacher" onClick={() => { setTeacherState(teacherState + 1) }}>
+                                <ArrowRightOrange />
                             </button>
                         </div>
+
                         <div className="cll-teacher">
                             {PicsArrayP[teacherState]}
-                            <img className="img-cll" src={Celular} alt="tela do professor" />
+                            <button className="btn" onClick={() => { setTeacherState(teacherState + 1) }}>
+                                <ArrowRightOrange />
+                            </button>
                         </div>
                     </div>
 
                     <div id="club">
+                        <h2 className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</h2>
+
+
                         <div className="club-container-a">
+
                             <h2 className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</h2>
 
-                            <h2>{TitleArrayC[clubState]}</h2>
+                            <h2 className="title">{TitleArrayC[clubState]}</h2>
 
-                            <p>{PhrasesArrayC[clubState]}</p>
-                        </div>
-                        <div className="btn-club">
-                            <button className="btn" onClick={() => { setClubState(clubState + 1) }}>
-                                <img src={ArrowRight} alt="comentário anterior" />
+                            <p className="phrase">{PhrasesArrayC[clubState]}</p>
+
+                            <button className="btn-club" onClick={() => { setClubState(clubState + 1) }}>
+                                <ArrowRightOrange />
                             </button>
                         </div>
+
                         <div className="cll-club">
                             {PicsArrayC[clubState]}
-                            <img className="img-cll" src={Celular} alt="tela do clube" />
+                            <button className="btn" onClick={() => { setClubState(clubState + 1) }}>
+                                <ArrowRightOrange />
+                            </button>
                         </div>
+                        
                     </div>
                     <div>
+                        <div className="a-container">
+
                         <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
                         <div className="store-container">
                             <a
@@ -255,6 +273,10 @@ function Landing() {
                             >
                                 <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
                             </a>
+                        </div>
+                        </div>
+                        <div className="b-container">
+                            <img src={Gostou} alt="Tenista jogando tênis"/>
                         </div>
                     </div>
 
