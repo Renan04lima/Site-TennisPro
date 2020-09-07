@@ -21,13 +21,14 @@ import ArrowRight from '../../assets/icons/keyboard_arrow_right-24px.svg'
 import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
 import ArrowRightOrange from '../../assets/icons/arrow_right-orange.svg'
 
+import { NameArray, CommentArray } from '../../Utils/Arrays/comments'
 import { TitleArrayT, PhrasesArrayT } from '../../Utils/Arrays/tennis'
 import Tennis1 from '../../assets/tenista/home.png'
-import Tennis6 from '../../assets/tenista/ranking-posicoes.png'
-import Tennis5 from '../../assets/tenista/ranking-rodadas.png'
-import Tennis3 from '../../assets/tenista/jogos.png'
-import Tennis2 from '../../assets/tenista/chat.png'
-import Tennis4 from '../../assets/tenista/professores.png'
+import Tennis2 from '../../assets/tenista/ranking-posicoes.png'
+import Tennis3 from '../../assets/tenista/ranking-rodadas.png'
+import Tennis4 from '../../assets/tenista/jogos.png'
+import Tennis5 from '../../assets/tenista/chat.png'
+import Tennis6 from '../../assets/tenista/professores.png'
 
 import emailjs from 'emailjs-com';
 
@@ -36,17 +37,18 @@ import './welcome.css'
 import './categories.css'
 import './comments.css'
 
-// import styled, { keyframes } from 'styled-components';
-/*import { fadeInLeft } from 'react-animations';
+import styled, { keyframes } from 'styled-components';
+import { fadeInLeft } from 'react-animations';
 
  const bounceAnimation = keyframes`${fadeInLeft}`;
 
-const BouncyDiv = styled.div`
+const BouncyDiv = styled.p`
   animation: 1s ${bounceAnimation};
-`; */
+`;
 
 function Landing() {
     const [x, setX] = useState(0)
+    const [indexComment, setIndexComment] = useState(0)
     const valoresIniciais = {
         name: '',
         email: '',
@@ -65,11 +67,17 @@ function Landing() {
 
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
-    console.log(x)
+    console.log('index comemente ', indexComment)
 
     useEffect(() => {
         if (x === 6) { setX(0) }
-    }, [x])
+        if (indexComment === 3) { setIndexComment(0) }
+        const time = setTimeout(()=> {
+            setIndexComment(indexComment + 1)
+            setX(x + 1)
+        }, 5000)
+        return () => clearTimeout(time);
+    }, [x, indexComment])
     function sendEmail(e) {
         e.preventDefault();
 
@@ -210,22 +218,18 @@ function Landing() {
                     <div className="comments-container">
                         <div className="perfil">
                             <img src={Perfil} alt="imagem do perfil" />
-                        Christopher Brendo
-                    </div>
+                            {NameArray[indexComment]}
+                        </div>
                         <div className="comentario">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..
-                        </p>
+                            <BouncyDiv>{CommentArray[indexComment]}
+                            </BouncyDiv>
                         </div>
                         <div className="btn-comentario">
-                            <button>
+                            <button onClick={()=> setIndexComment(indexComment - 1)}>
                                 <img src={ArrowLeft} alt="comentário anterior" />
                             </button>
 
-                            <button className="arrowLeft">
+                            <button className="arrowLeft" onClick={() => setIndexComment(indexComment + 1)}>
                                 <img src={ArrowRightOrange} alt="próximo comentário" />
                             </button>
                         </div>
