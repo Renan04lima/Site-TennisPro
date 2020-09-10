@@ -22,16 +22,17 @@ section #welcome-container .a-container .text-conteiner {
 }
 
 section #welcome-container .a-container .text-conteiner .main-text {
-    padding: 20px;
+    margin: 20px 0 20px 0;
     font-size: 4rem
 }
 
 section #welcome-container .a-container .text-conteiner .sub-text {
-    padding: 20px;
+    margin: 0 0 20px 0;
     font-size: 3rem
 }
 
 section #welcome-container .a-container .store-container-a {
+    margin: 20px 0 20px 0;
     display: flex;
     justify-content: space-around;
 }

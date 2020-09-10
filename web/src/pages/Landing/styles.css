@@ -11,6 +11,7 @@
 }
 
 header {
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     background-attachment: fixed;
@@ -41,13 +42,18 @@ section .gostou-container .a-container .text-container  {
     
 }
 
-section .gostou-container .a-container .btn-store-apps {
+section .gostou-container .a-container .store-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+section .gostou-container .a-container .store-container .btn-store-apps {
     max-width: 90%;
     height: auto;
     transition: opacity .3s;
 }
 
-section .gostou-container .a-container .btn-store-apps:hover:focus {
+section .gostou-container .a-container .store-container .btn-store-apps:hover:focus {
     opacity: .5;
 }
 

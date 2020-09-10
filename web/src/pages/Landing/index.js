@@ -14,7 +14,7 @@ import Perfil from '../../assets/perfil.png'
 import Gostou from '../../assets/app.png'
 
 import Ball from '../../assets/icons/ball.svg'
-import BallWhite from '../../assets/icons/tenista.svg'
+import {ReactComponent as BallWhite} from '../../assets/icons/tenista.svg'
 import Book from '../../assets/icons/import_contacts-white-18dp.svg'
 import Business from '../../assets/icons/business-white-18dp.svg'
 import BusinessWhite from '../../assets/icons/predios.svg'
@@ -164,7 +164,7 @@ function Landing() {
                     </div>
 
                     <nav className="container-categories">
-                        <h2 className="text-main"><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></h2>
+                        <p className="text-main"><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></p>
 
                         <div className="btn-a">
                             <a className="btn-categories" href="#tennis-player">
@@ -189,11 +189,11 @@ function Landing() {
                     </nav>
 
                     <div id="tennis-player">
-                        <h2 className="tennisIcon"><img src={BallWhite} alt="ícone do tenista" /> Tenistas</h2>
+                        <h2 className="tennisIcon"><BallWhite /> Tenistas</h2>
 
                         <div className="tennis-container-a">
 
-                            <h2 className="oblique"><img src={BallWhite} alt="ícone do tenista" /> Tenistas</h2>
+                            <h2 className="tennisIcon-mobile"><BallWhite /> Tenistas</h2>
 
                             <h2 className="title">{TitleArrayT[tennisState]}</h2>
 

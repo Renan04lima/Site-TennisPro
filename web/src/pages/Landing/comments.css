@@ -1,11 +1,12 @@
 section .comments-container {
-    max-width: 500px;
-    padding: 30px;
+    max-width: 300px;
+    padding: 10px;
 
     flex-direction: column;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: auto;
 }
 
 section .comments-container .perfil {
@@ -33,10 +34,11 @@ section .comments-container p {
 }
 
 section .comments-container .btn-comentario {
-    width: 360px;
     display: flex;
+    flex-direction: row;
     padding: 15px;
     justify-content: space-between;
+    align-self: normal;
 }
 
 section .comments-container .btn-comentario button {
