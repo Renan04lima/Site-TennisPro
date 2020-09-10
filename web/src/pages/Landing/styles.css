@@ -1,0 +1,95 @@
+.whatsapp {
+    position: fixed;
+    top: 82%;
+    right: 1%;
+    padding: 10px;
+    z-index: 10000000;
+}
+
+.cll {
+    max-width: 50%;
+}
+
+header {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    background-attachment: fixed;
+}
+
+header .logo {
+    max-width: 40%;
+    height: auto;
+}
+
+section div .oblique {
+    font-style: oblique
+}
+
+section h2 .oblique {
+    font-style: oblique
+}
+
+section .gostou-container .a-container  {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: auto;
+}
+
+section .gostou-container .a-container .text-container  {
+    
+}
+
+section .gostou-container .a-container .store-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+section .gostou-container .a-container .store-container .btn-store-apps {
+    max-width: 90%;
+    height: auto;
+    transition: opacity .3s;
+}
+
+section .gostou-container .a-container .store-container .btn-store-apps:hover:focus {
+    opacity: .5;
+}
+
+section .gostou-container .b-container img {
+    display: none;
+}
+
+@media screen and (min-width: 1100px) {
+    header {
+        display: flex;
+        margin-left: 30px;
+        justify-content: flex-start;
+        background-attachment: fixed;
+    }
+
+    section .gostou-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "gostou-a gostou-b";
+    }
+
+    section .gostou-container .a-container {
+        grid-area: gostou-a;
+    }
+
+    section .gostou-container .b-container {
+        grid-area: gostou-b;
+    }
+
+    section .gostou-container .b-container img {
+        display: block;
+        max-width: 600px;
+        max-height: 600px;
+    }
+
+}

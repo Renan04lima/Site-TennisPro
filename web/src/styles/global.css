@@ -1,0 +1,44 @@
+:root {
+  --color-background: #ffffff;
+  --color-text-base: #606062;
+  --color-orange-light: #ff9b02;
+  --color-orange: #fe7f02;
+  --color-red: #f75400;
+
+  font-size: 60%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-background)
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+body,
+input,
+label,
+textarea {
+  font-family: 'Aero';
+  font-size: 2rem;
+  color: var(--color-text-base)
+}
+
+span {
+  color: var(--color-orange-light)
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%;
+  }
+}
