@@ -19,8 +19,9 @@ import Book from '../../assets/icons/import_contacts-white-18dp.svg'
 import Business from '../../assets/icons/business-white-18dp.svg'
 import BusinessWhite from '../../assets/icons/predios.svg'
 import ArrowRight from '../../assets/icons/keyboard_arrow_right-24px.svg'
-import { ReactComponent as ArrowLeft } from '../../assets/icons/keyboard_arrow_left-24px.svg'
+import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
 import { ReactComponent as ArrowRightOrange } from '../../assets/icons/arrow_right-orange.svg'
+import ArrowRightOrangeAAA from '../../assets/icons/arrow_right-orange.svg'
 
 import { NameArray, CommentArray } from '../../Utils/Arrays/comments'
 import { TitleArrayT, PhrasesArrayT } from '../../Utils/Arrays/tennis'
@@ -55,6 +56,17 @@ const bounceAnimation = keyframes`${fadeInLeft}`;
 const BouncyDiv = styled.p`
   animation: 1s ${bounceAnimation};
 `;
+
+function Phrases(props) {
+    return (
+
+    <div className="comentario">
+        <BouncyDiv>
+            {props.array}
+        </BouncyDiv>
+    </div>
+    )
+}
 
 function Landing() {
     const [tennisState, setTennisState] = useState(0)
@@ -91,15 +103,11 @@ function Landing() {
     console.log('index comemente ', indexComment)
 
     useEffect(() => {
-        if (tennisState === 6) { setTennisState(0) }
-        if (teacherState === 2) { setTeacherState(0) }
-        if (clubState === 2) { setClubState(0) }
-        if (indexComment === 3) { setIndexComment(0) }
         const time = setTimeout(() => {
-            setIndexComment(indexComment + 1)
-            setTennisState(tennisState + 1)
-            setTeacherState(teacherState + 1)
-            setClubState(clubState + 1)
+            setIndexComment(indexComment === 2 ? 0 : indexComment + 1)
+            setTennisState(tennisState === 5 ? 0 : tennisState + 1)
+            setTeacherState(teacherState === 1 ? 0 : teacherState + 1)
+            setClubState(clubState === 1 ? 0 : clubState + 1)
         }, 5000)
         return () => clearTimeout(time);
     }, [tennisState, teacherState, clubState, indexComment])
@@ -191,14 +199,14 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayT[tennisState]}</p>
 
-                            <button className="btn-tennis" onClick={() => { setTennisState(tennisState + 1) }}>
+                            <button className="btn-tennis" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
                                 <ArrowRightOrange />
                             </button>
                         </div>
 
                         <div className="cll-tennis">
                             {PicsArrayT[tennisState]}
-                            <button className="btn" onClick={() => { setTennisState(tennisState + 1) }}>
+                            <button className="btn" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
                                 <ArrowRightOrange />
                             </button>
                         </div>
@@ -217,14 +225,14 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayP[teacherState]}</p>
 
-                            <button className="btn-teacher" onClick={() => { setTeacherState(teacherState + 1) }}>
+                            <button className="btn-teacher" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
                                 <ArrowRightOrange />
                             </button>
                         </div>
 
                         <div className="cll-teacher">
                             {PicsArrayP[teacherState]}
-                            <button className="btn" onClick={() => { setTeacherState(teacherState + 1) }}>
+                            <button className="btn" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
                                 <ArrowRightOrange />
                             </button>
                         </div>
@@ -242,41 +250,43 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayC[clubState]}</p>
 
-                            <button className="btn-club" onClick={() => { setClubState(clubState + 1) }}>
+                            <button className="btn-club" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
                                 <ArrowRightOrange />
                             </button>
                         </div>
 
                         <div className="cll-club">
                             {PicsArrayC[clubState]}
-                            <button className="btn" onClick={() => { setClubState(clubState + 1) }}>
+                            <button className="btn" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
                                 <ArrowRightOrange />
                             </button>
                         </div>
-                        
-                    </div>
-                    <div>
-                        <div className="a-container">
 
-                        <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
-                        <div className="store-container">
-                            <a
-                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
-                            </a>                        <a
-                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
-                            </a>
-                        </div>
+                    </div>
+                    <div className="gostou-container">
+                        <div className="a-container">
+                            <div className="text-conteiner">
+
+                                <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
+                            </div>
+                            <div className="store-container">
+                                <a
+                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
+                                </a>                        <a
+                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
+                                </a>
+                            </div>
                         </div>
                         <div className="b-container">
-                            <img src={Gostou} alt="Tenista jogando tênis"/>
+                            <img src={Gostou} alt="Tenista jogando tênis" />
                         </div>
                     </div>
 
@@ -285,17 +295,15 @@ function Landing() {
                             <img src={Perfil} alt="imagem do perfil" />
                             {NameArray[indexComment]}
                         </div>
-                        <div className="comentario">
-                            <BouncyDiv>{CommentArray[indexComment]}
-                            </BouncyDiv>
-                        </div>
+
+                        <Phrases array={CommentArray[indexComment]} />
                         <div className="btn-comentario">
-                            <button onClick={() => setIndexComment(indexComment - 1)}>
+                            <button onClick={() => indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)}>
                                 <img src={ArrowLeft} alt="comentário anterior" />
                             </button>
 
-                            <button className="arrowLeft" onClick={() => setIndexComment(indexComment + 1)}>
-                                <img src={ArrowRightOrange} alt="próximo comentário" />
+                            <button className="arrowLeft" onClick={() => indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)}>
+                                <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
                             </button>
                         </div>
                     </div>
