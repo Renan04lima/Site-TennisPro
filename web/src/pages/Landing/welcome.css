@@ -45,7 +45,7 @@ section #welcome-container .a-container .store-container-a .btn-store-apps:hover
 
 section #welcome-container .b-container {
     margin: auto;
-    max-width: 700px;
+    max-width: 300px;
 }
 
 section #welcome-container .b-container .img-home {
@@ -75,7 +75,9 @@ section #welcome-container .b-container .img-home {
         justify-content: space-between;
     }
 
-    .b-container {
+    section #welcome-container .b-container {
         grid-area: b;
+        margin: auto;
+        max-width: 900px;
     }
 }

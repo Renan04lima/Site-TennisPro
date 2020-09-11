@@ -12,10 +12,10 @@ import GooglePlay from '../../assets/playstore.png'
 import Perfil from '../../assets/perfil.png'
 import Gostou from '../../assets/app.png'
 
-import Ball from '../../assets/icons/ball.svg'
+import { ReactComponent as Ball } from '../../assets/icons/ball.svg'
 import { ReactComponent as BallWhite } from '../../assets/icons/tenista.svg'
-import Book from '../../assets/icons/import_contacts-white-18dp.svg'
-import Business from '../../assets/icons/business-white-18dp.svg'
+import { ReactComponent as Book } from '../../assets/icons/import_contacts-white-18dp.svg'
+import { ReactComponent as Business } from '../../assets/icons/business-white-18dp.svg'
 import BusinessWhite from '../../assets/icons/predios.svg'
 import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
 import { ReactComponent as ArrowRightOrange } from '../../assets/icons/arrow_right-orange.svg'
@@ -66,6 +66,7 @@ function Phrases(props) {
     )
 }
 
+
 function Landing() {
     const [tennisState, setTennisState] = useState(0)
     const [teacherState, setTeacherState] = useState(0)
@@ -98,6 +99,61 @@ function Landing() {
 
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
+    /* const navItems = document.querySelectorAll('a')
+    navItems.forEach(item =>
+        item.addEventListener('click', scrollToIdOnClick)
+    )
+
+    const navItems2 = document.querySelectorAll('a.btn-categories')
+    navItems2.forEach(item =>
+        item.addEventListener('click', scrollToIdOnClick)
+    ) */
+
+    function scrollToIdOnClick(e) {
+        e.preventDefault()
+        const to = getScrollTopByHref(e.target)
+
+        smoothScrollTo(0, to, 800)
+    }
+
+    /* function scrollToPosition(to) {
+        window.scroll({
+            top: to,
+            behavior: "smooth"
+        })
+    } */
+
+    function getScrollTopByHref(element) {
+        const id = element.getAttribute('href')
+        return document.querySelector(id).offsetTop
+    }
+
+    function smoothScrollTo(endX, endY, duration) {
+        const startX = window.scrollX || window.pageXOffset;
+        const startY = window.scrollY || window.pageYOffset;
+        const distanceX = endX - startX;
+        const distanceY = endY - startY;
+        const startTime = new Date().getTime();
+
+        duration = typeof duration !== 'undefined' ? duration : 400;
+
+        // Easing function
+        const easeInOutQuart = (time, from, distance, duration) => {
+            if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+            return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+        };
+
+        const timer = setInterval(() => {
+            const time = new Date().getTime() - startTime;
+            const newX = easeInOutQuart(time, startX, distanceX, duration);
+            const newY = easeInOutQuart(time, startY, distanceY, duration);
+            if (time >= duration) {
+                clearInterval(timer);
+            }
+            window.scroll(newX, newY);
+        }, 1000 / 60); // 60 fps
+    };
+
     useEffect(() => {
         const time = setTimeout(() => {
             setIndexComment(indexComment === 2 ? 0 : indexComment + 1)
@@ -125,6 +181,7 @@ function Landing() {
         <>
             <div id="page-landind-content">
                 <header>
+
                     <img className="logo" src={Logo} alt="tennis pro" />
                 </header>
                 <section>
@@ -163,24 +220,24 @@ function Landing() {
                         <p className="text-main"><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></p>
 
                         <div className="btn-a">
-                            <a className="btn-categories" href="#tennis-player">
-                                <img src={Ball} alt="tenista" />
+                            <a className="btn-categories" onClick={(e) => scrollToIdOnClick(e)} href="#tennis-player">
+                                <Ball href="#tennis-player" alt="tenista" />
                             </a>
-                            <a className="text-categories" href="#tennis-player">Tenistas</a>
+                            <a className="text-categories" onClick={(e) => scrollToIdOnClick(e)} href="#tennis-player">Tenistas</a>
                         </div>
 
                         <div className="btn-b">
-                            <a className="btn-categories" href="#teacher">
-                                <img src={Book} alt="professor" />
+                            <a className="btn-categories" onClick={(e) => scrollToIdOnClick(e)} href="#teacher">
+                                <Book href="#teacher" alt="professor" />
                             </a>
-                            <a className="text-categories" href="#teacher">Professores</a>
+                            <a className="text-categories" onClick={(e) => scrollToIdOnClick(e)} href="#teacher">Professores</a>
                         </div>
 
                         <div className="btn-c">
-                            <a className="btn-categories" href="#club">
-                                <img src={Business} alt="Club" />
+                            <a className="btn-categories" onClick={(e) => scrollToIdOnClick(e)} href="#club">
+                                <Business href="#club" alt="Club" />
                             </a>
-                            <a className="text-categories" href="#club">Clubes</a>
+                            <a className="text-categories" onClick={(e) => scrollToIdOnClick(e)} href="#club">Clubes</a>
                         </div>
                     </nav>
 
@@ -195,43 +252,43 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayT[tennisState]}</p>
 
-                            <button className="btn-tennis" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
+                            <a className="btn-tennis" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
                                 <ArrowRightOrange />
-                            </button>
+                            </a>
                         </div>
 
                         <div className="cll-tennis">
                             <div className="img-container">
                                 {PicsArrayT[tennisState]}
                             </div>
-                            <button className="btn" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
+                            <a className="btn" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
                                 <ArrowRightOrange />
-                            </button>
+                            </a>
                         </div>
 
 
                     </div>
 
                     <div id="teacher">
-                        <p className="teacherIcon"><img src={Book} alt="ícone do Professores" /> Professores</p>
+                        <p className="teacherIcon"><Book alt="ícone do Professores" /> Professores</p>
 
                         <div className="teacher-container-a">
 
-                            <p className="oblique"><img src={Book} alt="ícone do Professores" /> Professores</p>
+                            <p className="oblique"><Book alt="ícone do Professores" /> Professores</p>
 
                             <h2 className="title">{TitleArrayP[teacherState]}</h2>
 
                             <p className="phrase">{PhrasesArrayP[teacherState]}</p>
 
-                            <button className="btn-teacher" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
+                            <a className="btn-teacher" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
                                 <ArrowRightOrange />
-                            </button>
+                            </a>
                         </div>
 
                         <div className="cll-teacher">
-                            <button className="btn" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
+                            <a className="btn" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
                                 <ArrowRightOrange />
-                            </button>
+                            </a>
                             <div className="img-container">
                                 {PicsArrayP[teacherState]}
                             </div>
@@ -250,18 +307,18 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayC[clubState]}</p>
 
-                            <button className="btn-club" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
+                            <a className="btn-club" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
                                 <ArrowRightOrange />
-                            </button>
+                            </a>
                         </div>
 
                         <div className="cll-club">
                             <div className="img-container">
                                 {PicsArrayC[clubState]}
                             </div>
-                            <button className="btn" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
+                            <a className="btn" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
                                 <ArrowRightOrange />
-                            </button>
+                            </a>
                         </div>
 
                     </div>
@@ -301,13 +358,13 @@ function Landing() {
 
                             <Phrases array={CommentArray[indexComment]} />
                             <div className="btn-comentario">
-                                <button onClick={() => indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)}>
+                                <a onClick={() => indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)}>
                                     <img src={ArrowLeft} alt="comentário anterior" />
-                                </button>
+                                </a>
 
-                                <button className="arrowLeft" onClick={() => indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)}>
+                                <a className="arrowLeft" onClick={() => indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)}>
                                     <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <form

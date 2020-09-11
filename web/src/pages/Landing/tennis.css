@@ -115,10 +115,12 @@
         font-style: oblique;
         align-self: flex-start;
         font-size: 3rem;
+        align-items: center;
     }
 
     #tennis-player .tennisIcon svg {
         margin-right: 25px;
+
     }
 
     #tennis-player .tennis-container-a .tennisIcon-mobile {
