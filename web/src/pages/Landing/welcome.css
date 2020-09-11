@@ -1,7 +1,6 @@
 section #welcome-container {
     padding: 10px;
 
-    /* display: flex ; */
     flex-direction: column;
     align-items: center;
 }
@@ -16,7 +15,7 @@ section #welcome-container .a-container .text-conteiner {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    }
+}
 
 section #welcome-container .a-container .text-conteiner .main-text {
     margin: 20px 0 20px 0;
@@ -45,7 +44,6 @@ section #welcome-container .a-container .store-container-a .btn-store-apps:hover
 }
 
 section #welcome-container .b-container {
-    display: flex;
     margin: auto;
     max-width: 700px;
 }

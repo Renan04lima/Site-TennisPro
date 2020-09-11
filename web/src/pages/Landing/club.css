@@ -1,9 +1,11 @@
 #club {
-    padding-top: 200px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
-    background-color: var(--color-text-base);
-    background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(185deg, #ffffff 19%, transparent 20%);
+    background-color: white;
+    background-image: 
+    linear-gradient(-5deg, white 15%, transparent 17%), 
+    linear-gradient(3deg, var(--color-text-base) 90%, transparent 91%);
 }
 
 #club .clubIcon {
@@ -11,6 +13,7 @@
 }
 
 #club .club-container-a {
+    margin-top: 100px; 
     color: #FFFFFF;
     padding-left: 20px;
 }
@@ -33,6 +36,7 @@
 }
 
 #club .club-container-a .phrase {
+    max-width: 450px;
     padding: 0 0 20px 0;
 }
 
@@ -41,10 +45,11 @@
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-around;
+    padding: 5px
 }
 
 #club .cll-club .img-container{
-    max-width: 300px;
+    max-width: 260px;
 }
 
 #club .cll-club .img-club {
@@ -57,7 +62,6 @@
 #club .club-container-a .btn-club {
     display: none;
 }
-
 
 #club .cll-club .btn {
     -webkit-border-radius: 100px;
@@ -96,9 +100,7 @@
 
     .cll-club {
         grid-area: cll;
-        max-width: 300px;
-        height: 550px;
-        margin: 50px auto 30px;
+        margin: auto;
     }
 
     .club-container-a {
@@ -110,7 +112,7 @@
         grid-area: clubIcon;
         display: flex;
         align-items: center;
-        margin : auto auto auto 20px;
+        margin : auto auto 0 20px;
         color : white;
         font-style: oblique;
         align-self: flex-start;
@@ -159,9 +161,13 @@
         display: none;
     }
 
-    #club .cll-club .img-club {
-        max-width: 400px;
-        height: 700px;
+    #club .cll-club .img-container {
+        max-width: 300px;
+    }
+
+    #club .cll-club .img-container .img-club {
+        max-width: 100%;
+        height: auto;
         border-radius: 25px;
         border: 4px solid #000000;
     }
