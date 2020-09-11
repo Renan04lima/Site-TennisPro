@@ -3,14 +3,11 @@ section .container-categories {
     justify-content: space-between;
     display: flex;
     flex-direction: column;
-    height: 650px;
 }
 
 /* section .container-categories .btn-container {} */
 
 section .container-categories .btn-a {
-    height: 120px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -19,8 +16,6 @@ section .container-categories .btn-a {
 }
 
 section .container-categories .btn-b {
-    height: 120px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -29,8 +24,6 @@ section .container-categories .btn-b {
 }
 
 section .container-categories .btn-c {
-    height: 120px;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -48,9 +41,9 @@ section .container-categories div .btn-categories {
     width: 70px;
     padding: 20px;
     background-color: #FFFFFF;
-    box-shadow: 0px 0px 14px 0px #ff9b02;
-    -webkit-box-shadow: 0px 0px 14px 0px #ff9b02;
-    -moz-box-shadow: 0px 0px 14px 0px #ff9b02;
+    box-shadow: 0px 0px 3px 0px #ff9b02;
+    -webkit-box-shadow: 0px 0px 3px 0px #ff9b02;
+    -moz-box-shadow: 0px 0px 3px 0px #ff9b02;
     display: inline-block;
     cursor: pointer;
     display: flex;
@@ -61,13 +54,14 @@ section .container-categories div .btn-categories {
 section .container-categories .text-main {
     font-size: 3.5rem;
     text-align: center;
-    margin-top: 30px;
+    margin: 30px 0 30px 0;
 }
 
 section .container-categories .text-categories {
     text-decoration: none;
     color: var(--color-text-base);
-    margin-top: 30px;
+    margin: 30px 0 30px 0;
+
     font-size: 2.5rem;
 }
 

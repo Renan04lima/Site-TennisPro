@@ -9,16 +9,14 @@ import Logo from '../../assets/logo.png'
 import Home from '../../assets/home.png'
 import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
-import Celular from '../../assets/cll.png'
 import Perfil from '../../assets/perfil.png'
 import Gostou from '../../assets/app.png'
 
 import Ball from '../../assets/icons/ball.svg'
-import {ReactComponent as BallWhite} from '../../assets/icons/tenista.svg'
+import { ReactComponent as BallWhite } from '../../assets/icons/tenista.svg'
 import Book from '../../assets/icons/import_contacts-white-18dp.svg'
 import Business from '../../assets/icons/business-white-18dp.svg'
 import BusinessWhite from '../../assets/icons/predios.svg'
-import ArrowRight from '../../assets/icons/keyboard_arrow_right-24px.svg'
 import ArrowLeft from '../../assets/icons/keyboard_arrow_left-24px.svg'
 import { ReactComponent as ArrowRightOrange } from '../../assets/icons/arrow_right-orange.svg'
 import ArrowRightOrangeAAA from '../../assets/icons/arrow_right-orange.svg'
@@ -60,11 +58,11 @@ const BouncyDiv = styled.p`
 function Phrases(props) {
     return (
 
-    <div className="comentario">
-        <BouncyDiv>
-            {props.array}
-        </BouncyDiv>
-    </div>
+        <div className="comentario">
+            <BouncyDiv>
+                {props.array}
+            </BouncyDiv>
+        </div>
     )
 }
 
@@ -100,15 +98,13 @@ function Landing() {
 
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
-    console.log('index comemente ', indexComment)
-
     useEffect(() => {
         const time = setTimeout(() => {
             setIndexComment(indexComment === 2 ? 0 : indexComment + 1)
             setTennisState(tennisState === 5 ? 0 : tennisState + 1)
             setTeacherState(teacherState === 1 ? 0 : teacherState + 1)
             setClubState(clubState === 1 ? 0 : clubState + 1)
-        }, 5000)
+        }, 9000)
         return () => clearTimeout(time);
     }, [tennisState, teacherState, clubState, indexComment])
 
@@ -189,11 +185,11 @@ function Landing() {
                     </nav>
 
                     <div id="tennis-player">
-                        <h2 className="tennisIcon"><BallWhite /> Tenistas</h2>
+                        <p className="tennisIcon"><BallWhite /> Tenistas</p>
 
                         <div className="tennis-container-a">
 
-                            <h2 className="tennisIcon-mobile"><BallWhite /> Tenistas</h2>
+                            <p className="tennisIcon-mobile"><BallWhite /> Tenistas</p>
 
                             <h2 className="title">{TitleArrayT[tennisState]}</h2>
 
@@ -205,7 +201,9 @@ function Landing() {
                         </div>
 
                         <div className="cll-tennis">
-                            {PicsArrayT[tennisState]}
+                            <div className="img-container">
+                                {PicsArrayT[tennisState]}
+                            </div>
                             <button className="btn" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
                                 <ArrowRightOrange />
                             </button>
@@ -215,11 +213,11 @@ function Landing() {
                     </div>
 
                     <div id="teacher">
-                        <h2 className="teacherIcon"><img src={Book} alt="ícone do Professores" /> Professores</h2>
+                        <p className="teacherIcon"><img src={Book} alt="ícone do Professores" /> Professores</p>
 
                         <div className="teacher-container-a">
 
-                            <h2 className="oblique"><img src={Book} alt="ícone do Professores" /> Professores</h2>
+                            <p className="oblique"><img src={Book} alt="ícone do Professores" /> Professores</p>
 
                             <h2 className="title">{TitleArrayP[teacherState]}</h2>
 
@@ -231,20 +229,22 @@ function Landing() {
                         </div>
 
                         <div className="cll-teacher">
-                            {PicsArrayP[teacherState]}
                             <button className="btn" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
                                 <ArrowRightOrange />
                             </button>
+                            <div className="img-container">
+                                {PicsArrayP[teacherState]}
+                            </div>
                         </div>
                     </div>
 
                     <div id="club">
-                        <h2 className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</h2>
+                        <p className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
 
 
                         <div className="club-container-a">
 
-                            <h2 className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</h2>
+                            <p className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
 
                             <h2 className="title">{TitleArrayC[clubState]}</h2>
 
@@ -256,7 +256,9 @@ function Landing() {
                         </div>
 
                         <div className="cll-club">
-                            {PicsArrayC[clubState]}
+                            <div className="img-container">
+                                {PicsArrayC[clubState]}
+                            </div>
                             <button className="btn" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
                                 <ArrowRightOrange />
                             </button>
@@ -267,7 +269,7 @@ function Landing() {
                         <div className="a-container">
                             <div className="text-conteiner">
 
-                                <h1>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
+                                <h1 style={{ marginBottom: 40 }}>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
                             </div>
                             <div className="store-container">
                                 <a
@@ -290,54 +292,57 @@ function Landing() {
                         </div>
                     </div>
 
-                    <div className="comments-container">
-                        <div className="perfil">
-                            <img src={Perfil} alt="imagem do perfil" />
-                            {NameArray[indexComment]}
-                        </div>
+                    <div className="last-container">
+                        <div className="comments-container">
+                            <div className="perfil">
+                                <img src={Perfil} alt="imagem do perfil" />
+                                {NameArray[indexComment]}
+                            </div>
 
-                        <Phrases array={CommentArray[indexComment]} />
-                        <div className="btn-comentario">
-                            <button onClick={() => indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)}>
-                                <img src={ArrowLeft} alt="comentário anterior" />
-                            </button>
+                            <Phrases array={CommentArray[indexComment]} />
+                            <div className="btn-comentario">
+                                <button onClick={() => indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)}>
+                                    <img src={ArrowLeft} alt="comentário anterior" />
+                                </button>
 
-                            <button className="arrowLeft" onClick={() => indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)}>
-                                <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
-                            </button>
+                                <button className="arrowLeft" onClick={() => indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)}>
+                                    <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
+                                </button>
+                            </div>
                         </div>
+                        <form
+                            className="contact-form"
+                            onSubmit={sendEmail}
+                        >
+                            <h2 className="text-form">Ainda ficou alguma <span>dúvida?</span></h2>
+                            <FormField
+                                type="text"
+                                name="name"
+                                label="Nome"
+                                required="required"
+                                value={values.name}
+                                onChange={handleChange}
+                            />
+                            <FormField
+                                type="text"
+                                name="email"
+                                label="E-mail"
+                                required="required"
+                                value={values.email}
+                                onChange={handleChange}
+                            />
+                            <FormField
+                                type="textarea"
+                                name="assunto"
+                                label="Assunto"
+                                required="required"
+                                value={values.assunto}
+                                onChange={handleChange}
+                            />
+                            <Button type="submit">Enviar</Button>
+                        </form>
                     </div>
-                    <form
-                        className="contact-form"
-                        onSubmit={sendEmail}
-                    >
-                        <h2 className="text-form">Ainda ficou alguma <span>dúvida?</span></h2>
-                        <FormField
-                            type="text"
-                            name="name"
-                            label="Nome"
-                            required="required"
-                            value={values.name}
-                            onChange={handleChange}
-                        />
-                        <FormField
-                            type="text"
-                            name="email"
-                            label="E-mail"
-                            required="required"
-                            value={values.email}
-                            onChange={handleChange}
-                        />
-                        <FormField
-                            type="textarea"
-                            name="assunto"
-                            label="Assunto"
-                            required="required"
-                            value={values.assunto}
-                            onChange={handleChange}
-                        />
-                        <Button type="submit">Enviar</Button>
-                    </form>
+
                     <div>
                         <a
                             href="https://api.whatsapp.com/send?phone=5569993420000"
@@ -348,18 +353,6 @@ function Landing() {
                         </a>
                     </div>
                 </section>
-                <footer>
-                    <strong>Tennis Pro</strong>
-                    <p>
-                        <strong>Contato: </strong>
-                        tennisproapp2020@gmail.com
-                    </p>
-                    <p>
-                        <strong>Endereço: </strong>
-                        Av doutor armando panunzio, numero 1893. AP.403 B-13
-                    </p>
-                    <p>Todos os direitos reservados</p>
-                </footer>
             </div>
         </>
     );

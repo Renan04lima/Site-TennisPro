@@ -6,10 +6,6 @@
     z-index: 10000000;
 }
 
-.cll {
-    max-width: 50%;
-}
-
 header {
     margin-top: 15px;
     display: flex;
@@ -38,10 +34,6 @@ section .gostou-container .a-container  {
     margin: auto;
 }
 
-section .gostou-container .a-container .text-container  {
-    
-}
-
 section .gostou-container .a-container .store-container {
     display: flex;
     justify-content: space-around;
@@ -59,6 +51,19 @@ section .gostou-container .a-container .store-container .btn-store-apps:hover:fo
 
 section .gostou-container .b-container img {
     display: none;
+}
+section .last-container .contact-form {
+    padding: 20px;
+    max-width: 600px;
+}
+
+section .last-container .contact-form .text-form {
+    padding: 0 0 30px 0;
+}
+
+section .last-container .contact-form Button {
+    display: flex;
+    margin: auto;
 }
 
 @media screen and (min-width: 1100px) {
@@ -84,12 +89,34 @@ section .gostou-container .b-container img {
 
     section .gostou-container .b-container {
         grid-area: gostou-b;
+        margin: auto;
     }
 
     section .gostou-container .b-container img {
         display: block;
         max-width: 600px;
         max-height: 600px;
+    }
+
+    section .last-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "form comment";
+            padding: 0 30px 0 30px;
+    }
+    section .last-container .contact-form {
+        grid-area: form;
+        margin: auto;
+        width: 750px;
+    }
+    section .last-container .comments-container {
+        grid-area: comment;
+        max-width: 500px;
+        margin: auto;
+
     }
 
 }

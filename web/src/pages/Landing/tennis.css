@@ -1,5 +1,7 @@
 #tennis-player {
     padding-top: 200px;
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-orange-light);
     background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(175deg, #ffffff 19%, transparent 20%);
 }
@@ -17,9 +19,10 @@
     font-style: oblique;
     display: flex;
     align-items: center;
+    font-size: 3rem;
 }
 
-#tennis-player .tennis-container-a .tennisIcon-mobile svg{
+#tennis-player .tennis-container-a .tennisIcon-mobile svg {
     margin-right: 25px;
 }
 
@@ -38,8 +41,13 @@
     justify-content: space-around;
 }
 
-#tennis-player .cll-tennis .img-tennis {
-    max-width: 250px;
+#tennis-player .cll-tennis .img-container{
+    max-width: 300px;
+}
+
+#tennis-player .cll-tennis .img-container .img-tennis {
+    max-width: 100%;
+    height: auto;
     border-radius: 25px;
     border: 4px solid #000000;
 }
@@ -80,7 +88,7 @@
         grid-template-areas:
             "cll tennisIcon"
             "cll tennis-a"
-            "cll ."
+            "cll .";
     }
 
     .cll-tennis {
@@ -102,6 +110,7 @@
         color: white;
         font-style: oblique;
         align-self: flex-start;
+        font-size: 3rem;
     }
 
     #tennis-player .tennisIcon svg {
@@ -146,5 +155,10 @@
         display: none;
     }
 
-
+    #tennis-player .cll-tennis .img-tennis {
+        max-width: 100%;
+        height: auto;
+        border-radius: 25px;
+        border: 4px solid #000000;
+    }
 }

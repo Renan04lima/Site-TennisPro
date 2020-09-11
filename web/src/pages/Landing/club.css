@@ -1,5 +1,7 @@
 #club {
     padding-top: 200px;
+    display: flex;
+    flex-direction: column;
     background-color: var(--color-text-base);
     background-image: linear-gradient(-5deg, #ffffff 19%, transparent 20%), linear-gradient(185deg, #ffffff 19%, transparent 20%);
 }
@@ -19,6 +21,7 @@
     align-items: center;
     display: flex;
     align-items: center;
+    font-size: 3rem;
 }
 
 #club .club-container-a .oblique img {
@@ -40,8 +43,13 @@
     justify-content: space-around;
 }
 
+#club .cll-club .img-container{
+    max-width: 300px;
+}
+
 #club .cll-club .img-club {
-    max-width: 250px;
+    max-width: 100%;
+    height: auto;
     border-radius: 25px;
     border: 4px solid #000000;
 }
@@ -82,7 +90,8 @@
         grid-template-areas:
             "cll clubIcon"
             "cll club-a"
-            "cll ."
+            "cll .";
+        height: 900px
     }
 
     .cll-club {
@@ -105,6 +114,7 @@
         color : white;
         font-style: oblique;
         align-self: flex-start;
+        font-size: 3rem;
     }
 
     #club .clubIcon img {
@@ -147,5 +157,12 @@
 
     #club .cll-club .btn {
         display: none;
+    }
+
+    #club .cll-club .img-club {
+        max-width: 400px;
+        height: 700px;
+        border-radius: 25px;
+        border: 4px solid #000000;
     }
 }
