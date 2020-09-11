@@ -4,8 +4,8 @@
     flex-direction: column;
     background-color: white;
     background-image: 
-    linear-gradient(-3deg, white 10%, transparent 12%),
-    linear-gradient(-3deg, var(--color-orange-light) 90%, transparent 92%)
+    linear-gradient(-3deg, white 10%, transparent 10.5%),
+    linear-gradient(-3deg, var(--color-orange-light) 90%, transparent 90.5%)
 }
 
 #tennis-player .tennisIcon {

@@ -93,16 +93,28 @@ function Landing() {
 
     const { handleChange, values, clearForm } = useForm(valoresIniciais);
 
-    /* const navItems = document.querySelectorAll('a')
-    navItems.forEach(item =>
-        item.addEventListener('click', scrollToIdOnClick)
-    )
+    const handleTennis = (e) => {
+        e.preventDefault();
+        tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)
+    }
+    const handleTeacher = (e) => {
+        e.preventDefault();
+        teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)
+    }
+    const handleClub = (e) => {
+        e.preventDefault();
+        clubState === 1 ? setClubState(0) : setClubState(clubState + 1)
+    }
 
-    const navItems2 = document.querySelectorAll('a.btn-categories')
-    navItems2.forEach(item =>
-        item.addEventListener('click', scrollToIdOnClick)
-    ) */
+    const handleNextComments = (e) => {
+        e.preventDefault();
+        indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)
+    }
 
+    const handlePreviousComments = (e) => {
+        e.preventDefault();
+        indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)
+    }
 
     function scrollToIdOnClick(stringId, e) {
         e.preventDefault()
@@ -110,13 +122,6 @@ function Landing() {
 
         smoothScrollTo(0, to, 1000)
     }
-
-    /* function scrollToPosition(to) {
-        window.scroll({
-            top: to,
-            behavior: "smooth"
-        })
-    } */
 
     function getScrollTopByHref(element) {
         return document.querySelector(element).offsetTop
@@ -178,7 +183,6 @@ function Landing() {
         <>
             <div id="page-landind-content">
                 <header>
-
                     <img className="logo" src={Logo} alt="tennis pro" />
                 </header>
                 <section>
@@ -239,25 +243,25 @@ function Landing() {
                     </nav>
 
                     <div id="tennis-player">
-                        <p className="tennisIcon"><BallWhite /> Tenistas</p>
-                            <div data-aos="fade-up" className="tennis-container-a">
+                        <p data-aos="fade-up" className="tennisIcon"><BallWhite /> Tenistas</p>
+                        <div data-aos="fade-up" className="tennis-container-a">
 
-                                <p className="tennisIcon-mobile"><BallWhite /> Tenistas</p>
+                            <p className="tennisIcon-mobile"><BallWhite /> Tenistas</p>
 
-                                <h2 className="title">{TitleArrayT[tennisState]}</h2>
+                            <h2 className="title">{TitleArrayT[tennisState]}</h2>
 
-                                <p className="phrase">{PhrasesArrayT[tennisState]}</p>
+                            <p className="phrase">{PhrasesArrayT[tennisState]}</p>
 
-                                <a className="btn-tennis" href="#!" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
-                                    <ArrowRightOrange />
-                                </a>
-                            </div>
+                            <a className="btn-tennis" href="#!" onClick={(e) => handleTennis(e)}>
+                                <ArrowRightOrange />
+                            </a>
+                        </div>
 
-                        <div data-aos="fade-left" className="cll-tennis">
+                        <div className="cll-tennis">
                             <div className="img-container">
                                 {PicsArrayT[tennisState]}
                             </div>
-                            <a className="btn" href="#!" onClick={() => tennisState === 5 ? setTennisState(0) : setTennisState(tennisState + 1)}>
+                            <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleTennis(e)}>
                                 <ArrowRightOrange />
                             </a>
                         </div>
@@ -266,9 +270,9 @@ function Landing() {
                     </div>
 
                     <div id="teacher">
-                        <p className="teacherIcon"><Book alt="ícone do Professores" /> Professores</p>
+                        <p data-aos="fade-up" className="teacherIcon"><Book alt="ícone do Professores" /> Professores</p>
 
-                        <div data-aos="fade-down" className="teacher-container-a" >
+                        <div data-aos="fade-up" className="teacher-container-a" >
 
                             <p className="oblique"><Book alt="ícone do Professores" /> Professores</p>
 
@@ -276,13 +280,13 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayP[teacherState]}</p>
 
-                            <a className="btn-teacher" href="#!" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
+                            <a className="btn-teacher" href="#!" onClick={(e) => handleTeacher(e)}>
                                 <ArrowRightOrange />
                             </a>
                         </div>
 
-                        <div data-aos="fade-right" className="cll-teacher">
-                            <a className="btn" href="#!" onClick={() => teacherState === 1 ? setTeacherState(0) : setTeacherState(teacherState + 1)}>
+                        <div className="cll-teacher">
+                            <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleTeacher(e)}>
                                 <ArrowRightOrange />
                             </a>
                             <div className="img-container">
@@ -292,10 +296,9 @@ function Landing() {
                     </div>
 
                     <div id="club">
-                        <p className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
+                        <p data-aos="fade-up" className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
 
-
-                        <div data-aos="flip-left" className="club-container-a" >
+                        <div data-aos="fade-up" className="club-container-a" >
 
                             <p className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
 
@@ -303,22 +306,22 @@ function Landing() {
 
                             <p className="phrase">{PhrasesArrayC[clubState]}</p>
 
-                            <a className="btn-club" href="#!" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
+                            <a className="btn-club" href="#!" onClick={(e) => handleClub(e)}>
                                 <ArrowRightOrange />
                             </a>
                         </div>
 
-                        <div data-aos="flip-left" className="cll-club">
+                        <div className="cll-club">
                             <div className="img-container">
                                 {PicsArrayC[clubState]}
                             </div>
-                            <a className="btn" href="#!" onClick={() => clubState === 1 ? setClubState(0) : setClubState(clubState + 1)}>
+                            <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleClub(e)}>
                                 <ArrowRightOrange />
                             </a>
                         </div>
 
                     </div>
-                    <div className="gostou-container">
+                    <div data-aos="flip-up" className="gostou-container">
                         <div className="a-container">
                             <div className="text-conteiner">
 
@@ -354,11 +357,11 @@ function Landing() {
 
                             <Phrases array={CommentArray[indexComment]} />
                             <div className="btn-comentario">
-                                <a href="#!" onClick={() => indexComment === 0 ? setIndexComment(2) : setIndexComment(indexComment - 1)}>
+                                <a href="#!" onClick={(e) => handlePreviousComments(e)}>
                                     <img src={ArrowLeft} alt="comentário anterior" />
                                 </a>
 
-                                <a href="#!" className="arrowLeft" onClick={() => indexComment === 2 ? setIndexComment(0) : setIndexComment(indexComment + 1)}>
+                                <a href="#!" className="arrowLeft" onClick={(e) => handleNextComments(e)}>
                                     <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
                                 </a>
                             </div>
