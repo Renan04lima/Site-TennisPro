@@ -19,12 +19,13 @@ section #welcome-container .a-container .text-conteiner {
 
 section #welcome-container .a-container .text-conteiner .main-text {
     margin: 20px 0 20px 0;
-    font-size: 4rem
+    font-size: 3.7rem
 }
 
 section #welcome-container .a-container .text-conteiner .sub-text {
     margin: 0 0 20px 0;
-    font-size: 3rem
+    font-size: 2.2rem;
+    line-height: 3rem;
 }
 
 section #welcome-container .a-container .store-container-a {
@@ -33,13 +34,15 @@ section #welcome-container .a-container .store-container-a {
     justify-content: space-around;
 }
 
-section #welcome-container .a-container .store-container-a .btn-store-apps {
+section #welcome-container .a-container .store-container-a .btn-store-apps,
+section #welcome-container .a-container .store-container-a .btn-store-apps-apple {
     max-width: 90%;
     height: auto;
     transition: opacity .3s;
 }
 
-section #welcome-container .a-container .store-container-a .btn-store-apps:hover:focus {
+section #welcome-container .a-container .store-container-a .btn-store-apps:hover:focus,
+section #welcome-container .a-container .store-container-a .btn-store-apps-apple:hover:focus {
     opacity: .5;
 }
 
@@ -61,23 +64,32 @@ section #welcome-container .b-container .img-home {
 
     #welcome-container {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 680px 1fr;
+        grid-template-rows: 1fr;
         gap: 1px 1px;
         grid-template-areas:
-            "a b"
             "a b";
     }
 
-    .a-container {
+    section #welcome-container .a-container {
+        margin-left: 5vw;
         grid-area: a;
         height: 400px;
-        justify-content: space-between;
+        display: block;
     }
 
     section #welcome-container .b-container {
         grid-area: b;
-        margin: auto;
-        max-width: 900px;
+        margin: auto 0 auto auto;
+        max-width: 800px;
+    }
+
+    section #welcome-container .a-container .store-container-a {
+        display: block;
+        margin-top: 90px;
+    }
+
+    section #welcome-container .a-container .store-container-a .btn-store-apps-apple{
+        margin-right: calc(570.41px - 468px);
     }
 }

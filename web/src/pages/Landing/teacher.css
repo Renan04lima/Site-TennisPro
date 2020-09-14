@@ -28,11 +28,14 @@
 
 #teacher .teacher-container-a .title {
     padding: 20px 0;
+    margin: 20px 0 20px 0;
+    font-size: 3.5rem;
 }
 
 #teacher .teacher-container-a .phrase {
     max-width: 450px;
     padding: 0 0 20px 0;
+    height: 140px
 }
 
 #teacher .cll-teacher {
@@ -43,7 +46,7 @@
     padding: 5px;
 }
 
-#teacher .cll-teacher .img-container{
+#teacher .cll-teacher .img-container {
     max-width: 260px;
 }
 
@@ -91,7 +94,7 @@
             "teacherIcon cll"
             "teacher-a cll"
             ". cll";
-            height: 700px;
+        height: 700px;
 
 
     }
@@ -107,7 +110,7 @@
         grid-area: teacher-a;
         margin-left: 300px;
         padding-left: 0;
-        
+
     }
 
     #teacher .teacherIcon {
@@ -137,6 +140,7 @@
 
     #teacher .teacher-container-a .phrase {
         padding: 20px 0;
+        height: 140px
     }
 
     #teacher .teacher-container-a .btn-teacher {

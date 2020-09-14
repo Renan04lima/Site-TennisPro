@@ -5,7 +5,8 @@ import Button from '../../components/Button'
 import useForm from '../../hooks/useForm'
 import Pics from '../../components/Pics'
 
-import Logo from '../../assets/logo.png'
+import LogoMobile from '../../assets/logo-mobile.png'
+import LogoDesktop from '../../assets/logo-desktop.png'
 import Home from '../../assets/home.png'
 import AppleStore from '../../assets/apple.png'
 import GooglePlay from '../../assets/playstore.png'
@@ -180,237 +181,238 @@ function Landing() {
         clearForm();
     }
     return (
-        <>
-            <div id="page-landind-content">
-                <header>
-                    <img className="logo" src={Logo} alt="tennis pro" />
-                </header>
-                <section>
-
-                    <div id="welcome-container">
-                        <div className="a-container">
-                            <div className="text-conteiner">
-                                <h1 className="main-text">O <span>app</span> feito para <span>todos</span> os <span>tenistas</span></h1>
-
-                                <p className="sub-text">Participe de rankings e veja os resultados das rodadas</p>
-                            </div>
-                            <div className="store-container-a">
-                                <a
-                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
-                                </a>
-                                <a
-                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="b-container">
-                            <img className="img-home" src={Home} alt="tela de apresentação do app" />
-                        </div>
-                    </div>
-
-                    <nav className="container-categories">
-                        <p className="text-main"><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></p>
-
-                        <div className="btn-a">
-                            <a className="btn-categories" onClick={(e) => scrollToIdOnClick('#tennis-player', e)} href="#tennis-player">
-                                <Ball alt="tenista" />
-                            </a>
-                            <a className="text-categories" onClick={(e) => scrollToIdOnClick('#tennis-player', e)} href="#tennis-player">Tenistas</a>
-                        </div>
-
-                        <div className="btn-b">
-                            <a className="btn-categories" onClick={(e) => scrollToIdOnClick('#teacher', e)} href="#teacher">
-                                <Book alt="professor" />
-                            </a>
-                            <a className="text-categories" onClick={(e) => scrollToIdOnClick('#teacher', e)} href="#teacher">Professores</a>
-                        </div>
-
-                        <div className="btn-c">
-                            <a className="btn-categories" onClick={(e) => scrollToIdOnClick('#club', e)} href="#club">
-                                <Business alt="Club" />
-                            </a>
-                            <a className="text-categories" onClick={(e) => scrollToIdOnClick('#club', e)} href="#club">Clubes</a>
-                        </div>
-                    </nav>
-
-                    <div id="tennis-player">
-                        <p data-aos="fade-up" className="tennisIcon"><BallWhite /> Tenistas</p>
-                        <div data-aos="fade-up" className="tennis-container-a">
-
-                            <p className="tennisIcon-mobile"><BallWhite /> Tenistas</p>
-
-                            <h2 className="title">{TitleArrayT[tennisState]}</h2>
-
-                            <p className="phrase">{PhrasesArrayT[tennisState]}</p>
-
-                            <a className="btn-tennis" href="#!" onClick={(e) => handleTennis(e)}>
-                                <ArrowRightOrange />
-                            </a>
-                        </div>
-
-                        <div className="cll-tennis">
-                            <div className="img-container">
-                                {PicsArrayT[tennisState]}
-                            </div>
-                            <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleTennis(e)}>
-                                <ArrowRightOrange />
-                            </a>
-                        </div>
-
-
-                    </div>
-
-                    <div id="teacher">
-                        <p data-aos="fade-up" className="teacherIcon"><Book alt="ícone do Professores" /> Professores</p>
-
-                        <div data-aos="fade-up" className="teacher-container-a" >
-
-                            <p className="oblique"><Book alt="ícone do Professores" /> Professores</p>
-
-                            <h2 className="title">{TitleArrayP[teacherState]}</h2>
-
-                            <p className="phrase">{PhrasesArrayP[teacherState]}</p>
-
-                            <a className="btn-teacher" href="#!" onClick={(e) => handleTeacher(e)}>
-                                <ArrowRightOrange />
-                            </a>
-                        </div>
-
-                        <div className="cll-teacher">
-                            <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleTeacher(e)}>
-                                <ArrowRightOrange />
-                            </a>
-                            <div className="img-container">
-                                {PicsArrayP[teacherState]}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="club">
-                        <p data-aos="fade-up" className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
-
-                        <div data-aos="fade-up" className="club-container-a" >
-
-                            <p className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
-
-                            <h2 className="title">{TitleArrayC[clubState]}</h2>
-
-                            <p className="phrase">{PhrasesArrayC[clubState]}</p>
-
-                            <a className="btn-club" href="#!" onClick={(e) => handleClub(e)}>
-                                <ArrowRightOrange />
-                            </a>
-                        </div>
-
-                        <div className="cll-club">
-                            <div className="img-container">
-                                {PicsArrayC[clubState]}
-                            </div>
-                            <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleClub(e)}>
-                                <ArrowRightOrange />
-                            </a>
+        <div id="page-landind-content">
+            <section>
+                    <div className="header">
+                        <div className="logo-container">
+                            <img className="logo-mobile" src={LogoMobile} alt="tennis pro" />
+                            <img className="logo-desktop" src={LogoDesktop} alt="tennis pro" />
                         </div>
 
                     </div>
-                    <div data-aos="flip-up" className="gostou-container">
-                        <div className="a-container">
-                            <div className="text-conteiner">
+                <div id="welcome-container">
 
-                                <h1 style={{ marginBottom: 40 }}>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
-                            </div>
-                            <div className="store-container">
-                                <a
-                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
-                                </a>                        <a
-                                    href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
-                                </a>
-                            </div>
+                    <div className="a-container">
+                        <div className="text-conteiner">
+                            <h1 className="main-text">O <span>app</span> feito para <span>todos</span> os <span>tenistas</span></h1>
+
+                            <p className="sub-text">Participe de rankings e veja os resultados das rodadas</p>
                         </div>
-                        <div className="b-container">
-                            <img src={Gostou} alt="Tenista jogando tênis" />
+                        <div className="store-container-a">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img className="btn-store-apps-apple" src={AppleStore} alt="baixar na apple store" />
+                            </a>
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
+                            </a>
                         </div>
                     </div>
 
-                    <div className="last-container">
-                        <div className="comments-container">
-                            <div className="perfil">
-                                <img src={Perfil} alt="imagem do perfil" />
-                                {NameArray[indexComment]}
-                            </div>
+                    <div className="b-container">
+                        <img data-aos="zoom-in-up" className="img-home" src={Home} alt="tela de apresentação do app" />
+                    </div>
+                </div>
 
-                            <Phrases array={CommentArray[indexComment]} />
-                            <div className="btn-comentario">
-                                <a href="#!" onClick={(e) => handlePreviousComments(e)}>
-                                    <img src={ArrowLeft} alt="comentário anterior" />
-                                </a>
+                <nav className="container-categories">
+                    <p className="text-main"><span className="oblique">Diferentes</span> contas para diferentes <span className="oblique">necessidades</span></p>
 
-                                <a href="#!" className="arrowLeft" onClick={(e) => handleNextComments(e)}>
-                                    <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
-                                </a>
-                            </div>
-                        </div>
-                        <form
-                            className="contact-form"
-                            onSubmit={sendEmail}
-                        >
-                            <h2 className="text-form">Ainda ficou alguma <span>dúvida?</span></h2>
-                            <FormField
-                                type="text"
-                                name="name"
-                                label="Nome"
-                                required="required"
-                                value={values.name}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                type="text"
-                                name="email"
-                                label="E-mail"
-                                required="required"
-                                value={values.email}
-                                onChange={handleChange}
-                            />
-                            <FormField
-                                type="textarea"
-                                name="assunto"
-                                label="Assunto"
-                                required="required"
-                                value={values.assunto}
-                                onChange={handleChange}
-                            />
-                            <Button type="submit">Enviar</Button>
-                        </form>
+                    <div className="btn-a">
+                        <a className="btn-categories" onClick={(e) => scrollToIdOnClick('#tennis-player', e)} href="#tennis-player">
+                            <Ball alt="tenista" />
+                        </a>
+                        <a className="text-categories" onClick={(e) => scrollToIdOnClick('#tennis-player', e)} href="#tennis-player">Tenistas</a>
                     </div>
 
-                    <div>
-                        <a
-                            href="https://api.whatsapp.com/send?phone=5569993420000"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img className="whatsapp" src="https://images.tcdn.com.br/static_inst/integracao/imagens/whatsapp.png" alt="whatsapp" />
+                    <div className="btn-b">
+                        <a className="btn-categories" onClick={(e) => scrollToIdOnClick('#teacher', e)} href="#teacher">
+                            <Book alt="professor" />
+                        </a>
+                        <a className="text-categories" onClick={(e) => scrollToIdOnClick('#teacher', e)} href="#teacher">Professores</a>
+                    </div>
+
+                    <div className="btn-c">
+                        <a className="btn-categories" onClick={(e) => scrollToIdOnClick('#club', e)} href="#club">
+                            <Business alt="Club" />
+                        </a>
+                        <a className="text-categories" onClick={(e) => scrollToIdOnClick('#club', e)} href="#club">Clubes</a>
+                    </div>
+                </nav>
+
+                <div data-aos="fade-up" id="tennis-player">
+                    <p data-aos="fade-up" className="tennisIcon"><BallWhite /> Tenistas</p>
+                    <div data-aos="fade-up" className="tennis-container-a">
+
+                        <p className="tennisIcon-mobile"><BallWhite /> Tenistas</p>
+
+                        <h2 className="title">{TitleArrayT[tennisState]}</h2>
+
+                        <p className="phrase">{PhrasesArrayT[tennisState]}</p>
+
+                        <a className="btn-tennis" href="#!" onClick={(e) => handleTennis(e)}>
+                            <ArrowRightOrange />
                         </a>
                     </div>
-                </section>
-            </div>
-        </>
+
+                    <div className="cll-tennis">
+                        <div data-aos="zoom-in-up" className="img-container">
+                            {PicsArrayT[tennisState]}
+                        </div>
+                        <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleTennis(e)}>
+                            <ArrowRightOrange />
+                        </a>
+                    </div>
+
+
+                </div>
+
+                <div data-aos="fade-up" id="teacher">
+                    <p data-aos="fade-up" className="teacherIcon"><Book alt="ícone do Professores" /> Professores</p>
+
+                    <div data-aos="fade-up" className="teacher-container-a" >
+
+                        <p className="oblique"><Book alt="ícone do Professores" /> Professores</p>
+
+                        <h2 className="title">{TitleArrayP[teacherState]}</h2>
+
+                        <p className="phrase">{PhrasesArrayP[teacherState]}</p>
+
+                        <a className="btn-teacher" href="#!" onClick={(e) => handleTeacher(e)}>
+                            <ArrowRightOrange />
+                        </a>
+                    </div>
+
+                    <div className="cll-teacher">
+                        <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleTeacher(e)}>
+                            <ArrowRightOrange />
+                        </a>
+                        <div data-aos="zoom-in-up" className="img-container">
+                            {PicsArrayP[teacherState]}
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-up" id="club">
+                    <p data-aos="fade-up" className="clubIcon"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
+
+                    <div data-aos="fade-up" className="club-container-a" >
+
+                        <p className="oblique"><img src={BusinessWhite} alt="ícone do club" /> Clubes</p>
+
+                        <h2 className="title">{TitleArrayC[clubState]}</h2>
+
+                        <p className="phrase">{PhrasesArrayC[clubState]}</p>
+
+                        <a className="btn-club" href="#!" onClick={(e) => handleClub(e)}>
+                            <ArrowRightOrange />
+                        </a>
+                    </div>
+
+                    <div className="cll-club">
+                        <div data-aos="zoom-in-up" className="img-container">
+                            {PicsArrayC[clubState]}
+                        </div>
+                        <a data-aos="fade-up" className="btn" href="#!" onClick={(e) => handleClub(e)}>
+                            <ArrowRightOrange />
+                        </a>
+                    </div>
+
+                </div>
+                <div className="gostou-container">
+                    <div className="a-container">
+                        <div data-aos="flip-up" className="text-conteiner">
+
+                            <h1 style={{ marginBottom: 40 }}>Gostou? <span>Baixe</span> o app <span>agora</span> mesmo</h1>
+                        </div>
+                        <div data-aos="flip-up" className="store-container">
+                            <a
+                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img className="btn-store-apps" src={AppleStore} alt="baixar na apple store" />
+                            </a>                        <a
+                                href="https://play.google.com/store/apps/details?id=com.tennispro.tennispro"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img className="btn-store-apps" src={GooglePlay} alt="Baixar na play store" />
+                            </a>
+                        </div>
+                    </div>
+                    <div className="b-container">
+                        <img data-aos="flip-up" src={Gostou} alt="Tenista jogando tênis" />
+                    </div>
+                </div>
+
+                <div className="last-container">
+                    <div data-aos="fade-up" className="comments-container">
+                        <div className="perfil">
+                            <img src={Perfil} alt="imagem do perfil" />
+                            {NameArray[indexComment]}
+                        </div>
+
+                        <Phrases array={CommentArray[indexComment]} />
+                        <div className="btn-comentario">
+                            <a href="#!" onClick={(e) => handlePreviousComments(e)}>
+                                <img src={ArrowLeft} alt="comentário anterior" />
+                            </a>
+
+                            <a href="#!" className="arrowLeft" onClick={(e) => handleNextComments(e)}>
+                                <img src={ArrowRightOrangeAAA} alt="próximo comentário" />
+                            </a>
+                        </div>
+                    </div>
+                    <form
+                        className="contact-form"
+                        onSubmit={sendEmail}
+                    >
+                        <h2 data-aos="zoom-in-up" className="text-form">Ainda ficou alguma <span>dúvida?</span></h2>
+                        <FormField
+                            type="text"
+                            name="name"
+                            label="Nome"
+                            required="required"
+                            value={values.name}
+                            onChange={handleChange}
+                        />
+                        <FormField
+                            type="email"
+                            name="email"
+                            label="E-mail"
+                            required="required"
+                            value={values.email}
+                            onChange={handleChange}
+                        />
+                        <FormField
+                            type="textarea"
+                            name="assunto"
+                            label="Assunto"
+                            required="required"
+                            value={values.assunto}
+                            onChange={handleChange}
+                        />
+                        <Button type="submit">Enviar</Button>
+                    </form>
+                </div>
+                <div>
+                    <a
+                        href="https://api.whatsapp.com/send?phone=5569993420000"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <img className="whatsapp" src="https://images.tcdn.com.br/static_inst/integracao/imagens/whatsapp.png" alt="whatsapp" />
+                    </a>
+                </div>
+            </section>
+        </div>
     );
 }
 

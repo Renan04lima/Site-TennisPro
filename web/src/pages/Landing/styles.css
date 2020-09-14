@@ -6,14 +6,22 @@
     z-index: 10000000;
 }
 
-header {
+section .header {
     margin-top: 15px;
     display: flex;
     justify-content: center;
 }
 
-header .logo {
-    max-width: 40%;
+section .header .logo-container {
+    max-width: 130px;
+}
+
+section .header .logo-container .logo-desktop {
+    display: none;
+}
+
+section .header .logo-container .logo-mobile {
+    max-width: 90%;
     height: auto;
 }
 
@@ -25,7 +33,7 @@ section h2 .oblique {
     font-style: oblique
 }
 
-section .gostou-container .a-container  {
+section .gostou-container .a-container {
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -33,7 +41,7 @@ section .gostou-container .a-container  {
     margin: auto;
 }
 
-section .gostou-container .a-container h1{
+section .gostou-container .a-container h1 {
     margin-top: 60px;
 }
 
@@ -56,10 +64,11 @@ section .gostou-container .a-container .store-container .btn-store-apps:hover:fo
 section .gostou-container .b-container img {
     display: none;
 }
+
 section .last-container .contact-form {
     padding: 20px;
     max-width: 600px;
-    margin: auto;
+    margin: auto auto 50px auto;
 }
 
 section .last-container .contact-form .text-form {
@@ -72,12 +81,6 @@ section .last-container .contact-form Button {
 }
 
 @media screen and (min-width: 1100px) {
-    header {
-        display: flex;
-        margin-left: 30px;
-        justify-content: flex-start;
-    }
-
     section .gostou-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -85,6 +88,26 @@ section .last-container .contact-form Button {
         gap: 1px 1px;
         grid-template-areas:
             "gostou-a gostou-b";
+    }
+
+    section .header {
+        display: flex;
+        margin-left: 20px;
+        justify-content: flex-start;
+    }
+
+    section .header .logo-container {
+        max-width: 400px;
+    }
+
+    section .header .logo-container .logo-desktop {
+        max-width: 90%;
+        height: auto;
+        display: block;
+    }
+
+    section .header .logo-container .logo-mobile {
+        display: none;
     }
 
     section .gostou-container .a-container {
@@ -109,13 +132,15 @@ section .last-container .contact-form Button {
         gap: 1px 1px;
         grid-template-areas:
             "form comment";
-            padding: 0 30px 0 30px;
+        padding: 0 30px 0 30px;
     }
+
     section .last-container .contact-form {
         grid-area: form;
         margin: auto;
         width: 750px;
     }
+
     section .last-container .comments-container {
         grid-area: comment;
         max-width: 500px;

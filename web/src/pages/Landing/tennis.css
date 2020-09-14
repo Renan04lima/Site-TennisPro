@@ -1,11 +1,10 @@
 #tennis-player {
-    display: flex;  
-    max-height: 900px;
+    display: flex;
     flex-direction: column;
     background-color: white;
-    background-image: 
-    linear-gradient(-3deg, white 10%, transparent 10.5%),
-    linear-gradient(-3deg, var(--color-orange-light) 90%, transparent 90.5%)
+    background-image:
+        linear-gradient(-3deg, white 10%, transparent 10.09%),
+        linear-gradient(-3deg, var(--color-orange-light) 90%, transparent 90.09%)
 }
 
 #tennis-player .tennisIcon {
@@ -13,7 +12,7 @@
 }
 
 #tennis-player .tennis-container-a {
-    margin-top: 100px; 
+    margin-top: 100px;
     color: #FFFFFF;
     padding-left: 20px;
 }
@@ -23,6 +22,7 @@
     display: flex;
     align-items: center;
     font-size: 3rem;
+    margin-top: 30px;
 }
 
 #tennis-player .tennis-container-a .tennisIcon-mobile svg {
@@ -31,11 +31,14 @@
 
 #tennis-player .tennis-container-a .title {
     padding: 20px 0;
+    margin: 20px 0 20px 0;
+    font-size: 3.5rem;
 }
 
 #tennis-player .tennis-container-a .phrase {
     max-width: 450px;
     padding: 0 0 20px 0;
+    height: 140px
 }
 
 #tennis-player .cll-tennis {
@@ -46,7 +49,7 @@
     padding: 5px;
 }
 
-#tennis-player .cll-tennis .img-container{
+#tennis-player .cll-tennis .img-container {
     max-width: 260px;
 }
 
@@ -134,6 +137,7 @@
 
     #tennis-player .tennis-container-a .phrase {
         padding: 20px 0;
+        height: 140px
     }
 
     #tennis-player .tennis-container-a .btn-tennis {
@@ -164,6 +168,7 @@
     #tennis-player .cll-tennis .img-container {
         max-width: 300px;
     }
+
     #tennis-player .cll-tennis .img-container .img-tennis {
         max-width: 100%;
         height: auto;
