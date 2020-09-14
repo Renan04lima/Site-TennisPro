@@ -24,11 +24,17 @@ body {
   flex-direction: column;
 }
 
+
+h1,
+p{
+  line-height: 5rem;
+}
+
 body,
 input,
 label,
 textarea {
-  font-family: 'Aero';
+  font-family: 'Raleway', sans-serif;
   font-size: 2rem;
   color: var(--color-text-base)
 }
