@@ -1,5 +1,5 @@
 section .comments-container {
-    max-width: 300px;
+    max-width: 500px;
     padding: 10px;
 
     flex-direction: column;
@@ -41,26 +41,29 @@ section .comments-container .btn-comentario {
     align-self: normal;
 }
 
-section .comments-container .btn-comentario button {
+section .comments-container .btn-comentario a {
     border-radius: 100%;
     border: 2px solid #cccccc;
     transition: opacity .3s;
     background-color: white;
     cursor: pointer;
     text-decoration: none;
-    box-shadow: 0px 0px 14px 0px #cccccc;
-    -webkit-box-shadow: 0px 0px 14px 0px #cccccc;
-    -moz-box-shadow: 0px 0px 14px 0px #cccccc;
+    box-shadow: 0px 0px 2px 0px #cccccc;
+    -webkit-box-shadow: 0px 0px 2px 0px #cccccc;
+    -moz-box-shadow: 0px 0px 2px 0px #cccccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-section .comments-container .btn-comentario button:hover,
-section .comments-container .btn-comentario button:focus {
+section .comments-container .btn-comentario a:hover,
+section .comments-container .btn-comentario a:focus {
     opacity: .5;
 }
 
 section .comments-container .btn-comentario .arrowLeft {
-    border: 2px transparent var(--color-orange-light);
-    box-shadow: 0px 0px 14px 0px #ff9b02;
-    -webkit-box-shadow: 0px 0px 14px 0px #ff9b02;
-    -moz-box-shadow: 0px 0px 14px 0px #ff9b02;
+    border: 2px solid var(--color-orange-light);
+    box-shadow: 0px 0px 2px 0px #ff9b02;
+    -webkit-box-shadow: 0px 0px 2px 0px #ff9b02;
+    -moz-box-shadow: 0px 0px 2px 0px #ff9b02;
 }

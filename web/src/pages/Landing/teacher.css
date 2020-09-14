@@ -1,5 +1,7 @@
 #teacher {
-    padding-top: 200px;
+    padding: 100px 0 10px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 #teacher .teacherIcon {
@@ -17,18 +19,23 @@
     align-items: center;
     display: flex;
     align-items: center;
+    font-size: 3rem;
 }
 
-#teacher .teacher-container-a .oblique img {
+#teacher .teacher-container-a .oblique svg {
     margin-right: 25px;
 }
 
 #teacher .teacher-container-a .title {
     padding: 20px 0;
+    margin: 20px 0 20px 0;
+    font-size: 3.5rem;
 }
 
 #teacher .teacher-container-a .phrase {
+    max-width: 450px;
     padding: 0 0 20px 0;
+    height: 140px
 }
 
 #teacher .cll-teacher {
@@ -36,10 +43,16 @@
     flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-around;
+    padding: 5px;
+}
+
+#teacher .cll-teacher .img-container {
+    max-width: 260px;
 }
 
 #teacher .cll-teacher .img-teacher {
-    max-width: 250px;
+    max-width: 100%;
+    height: auto;
     border-radius: 25px;
     border: 4px solid #000000;
 }
@@ -56,7 +69,7 @@
     height: 70px;
     border: 2px solid #E9E9E9;
     width: 70px;
-    background-color: var(--color-orange-light);
+    background-color: white;
     display: inline-block;
     cursor: pointer;
     display: flex;
@@ -65,7 +78,7 @@
 }
 
 #teacher .cll-teacher .btn svg {
-    fill: #E9E9E9;
+    fill: black;
     width: 50px;
     height: 50px;
 }
@@ -80,7 +93,10 @@
         grid-template-areas:
             "teacherIcon cll"
             "teacher-a cll"
-            ". cll"
+            ". cll";
+        height: 700px;
+
+
     }
 
     .cll-teacher {
@@ -94,7 +110,7 @@
         grid-area: teacher-a;
         margin-left: 300px;
         padding-left: 0;
-        
+
     }
 
     #teacher .teacherIcon {
@@ -106,10 +122,10 @@
         font-style: oblique;
         align-self: flex-end;
         margin-left: 300px;
-
+        font-size: 3rem;
     }
 
-    #teacher .teacherIcon img {
+    #teacher .teacherIcon svg {
         margin-right: 25px;
     }
 
@@ -124,6 +140,7 @@
 
     #teacher .teacher-container-a .phrase {
         padding: 20px 0;
+        height: 140px
     }
 
     #teacher .teacher-container-a .btn-teacher {
@@ -150,6 +167,17 @@
 
     #teacher .cll-teacher .btn {
         display: none;
+    }
+
+    #teacher .cll-teacher .img-container {
+        max-width: 300px;
+    }
+
+    #teacher .cll-teacher .img-container .img-teacher {
+        max-width: 100%;
+        height: auto;
+        border-radius: 25px;
+        border: 4px solid #000000;
     }
 
 
